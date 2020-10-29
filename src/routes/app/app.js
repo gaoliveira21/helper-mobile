@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Entypo } from '@expo/vector-icons';
 
 import Dashboard from '../../screens/App/Dashboard';
+import Cases from '../../screens/App/Cases';
 
 const Tab = createBottomTabNavigator();
 
@@ -38,6 +39,18 @@ const AppRoutes = () => {
           tabBarIcon: ({ color, size, focused }) => {
             return (
               <Entypo name="home" size={size} color={focused ? color : '#999'} />
+            );
+          }
+        }}
+      />
+      <Tab.Screen
+        name="Cases"
+        component={Cases}
+        options={{
+          tabBarLabel: 'Casos',
+          tabBarIcon: ({ color, size, focused }) => {
+            return (
+              <Entypo name="suitcase" size={size} color={focused ? color : '#999'} />
             );
           }
         }}
