@@ -5,6 +5,7 @@ import { Entypo, FontAwesome } from '@expo/vector-icons';
 import Dashboard from '../../screens/App/Dashboard';
 import Cases from '../../screens/App/Cases';
 import Entities from '../../screens/App/Entities';
+import Profile from '../../screens/App/Profile';
 
 const Tab = createBottomTabNavigator();
 
@@ -64,6 +65,18 @@ const AppRoutes = () => {
           tabBarIcon: ({ color, size, focused }) => {
             return (
               <FontAwesome name="institution" size={size} color={focused ? color : '#999'} />
+            );
+          }
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarLabel: 'Perfil',
+          tabBarIcon: ({ color, size, focused }) => {
+            return (
+              <FontAwesome name="user" size={size} color={focused ? color : '#999'} />
             );
           }
         }}
