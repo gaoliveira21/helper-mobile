@@ -1,9 +1,10 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Entypo } from '@expo/vector-icons';
+import { Entypo, FontAwesome } from '@expo/vector-icons';
 
 import Dashboard from '../../screens/App/Dashboard';
 import Cases from '../../screens/App/Cases';
+import Entities from '../../screens/App/Entities';
 
 const Tab = createBottomTabNavigator();
 
@@ -51,6 +52,18 @@ const AppRoutes = () => {
           tabBarIcon: ({ color, size, focused }) => {
             return (
               <Entypo name="suitcase" size={size} color={focused ? color : '#999'} />
+            );
+          }
+        }}
+      />
+      <Tab.Screen
+        name="Entities"
+        component={Entities}
+        options={{
+          tabBarLabel: 'Instituições',
+          tabBarIcon: ({ color, size, focused }) => {
+            return (
+              <FontAwesome name="institution" size={size} color={focused ? color : '#999'} />
             );
           }
         }}
