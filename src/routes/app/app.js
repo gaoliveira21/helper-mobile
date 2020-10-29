@@ -1,15 +1,15 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Dashboard from '../../screens/App/Dashboard';
 
-const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const AppRoutes = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Dashboard" component={Dashboard} />
-    </Stack.Navigator>
+    <Tab.Navigator>
+      <Tab.Screen name="Dashboard" component={Dashboard} />
+    </Tab.Navigator>
   );
 }
 
