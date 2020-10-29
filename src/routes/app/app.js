@@ -13,6 +13,7 @@ const AppRoutes = () => {
   return (
     <Tab.Navigator tabBarOptions={{
       style: {
+        borderTopWidth: 0,
         elevation: 0,
         shadowOpacity: 0,
         height: 64,
