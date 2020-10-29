@@ -1,10 +1,10 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { View } from 'react-native';
 
 // import { Container } from './styles';
 
 const Welcome = () => {
-  return <Text>Welcome</Text>;
+  return <View />;
 }
 
 export default Welcome;
