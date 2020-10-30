@@ -1,14 +1,49 @@
 import 'react-native-gesture-handler';
+import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
+import { Montserrat_700Bold } from '@expo-google-fonts/montserrat';
 
 import Routes from './src/routes';
 
+import { Container, LoadingImage, LogoText, LoadingIcon, LoadingText } from './src/styles/loading';
+
+import loading from './src/assets/loading.png'
+
 export default function App() {
-  return (
-    <>
-      <Routes />
-      <StatusBar style="auto" />
-    </>
-  );
+  const [loadingApp, setLoadingApp] = useState(true);
+
+  let [fontsLoaded] = useFonts({
+    Roboto_400Regular,
+    Roboto_700Bold,
+    Montserrat_700Bold
+  });
+
+  useEffect(() => {
+    async function loadStoragedData() {
+      setTimeout(() => {
+        setLoadingApp(false);
+      }, 1500);
+    }
+
+    loadStoragedData();
+  }, []);
+
+  if (!fontsLoaded || loadingApp) {
+    return (
+      <Container>
+        <LogoText>Helper</LogoText>
+        <LoadingImage source={loading} />
+        <LoadingIcon />
+        <LoadingText>Carregando...</LoadingText>
+      </Container>
+    );
+  } else {
+    return (
+      <>
+        <Routes />
+        <StatusBar style="auto" />
+      </>
+    );
+  }
 }
