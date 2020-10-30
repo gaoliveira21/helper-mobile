@@ -4,6 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
 import { Montserrat_700Bold } from '@expo-google-fonts/montserrat';
 
+import AppProvider from './src/hooks/app';
 import Routes from './src/routes';
 
 import { Container, LoadingImage, LogoText, LoadingIcon, LoadingText } from './src/styles/loading';
@@ -40,10 +41,10 @@ export default function App() {
     );
   } else {
     return (
-      <>
+      <AppProvider>
         <Routes />
         <StatusBar style="auto" />
-      </>
+      </AppProvider>
     );
   }
 }
