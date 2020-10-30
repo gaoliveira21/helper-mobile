@@ -1,10 +1,13 @@
 import React from 'react';
-import { View } from 'react-native';
 
-// import { Container } from './styles';
+import { Container, LogoText } from './styles';
 
 const Welcome = () => {
-  return <View />;
+  return (
+    <Container>
+      <LogoText>Helper</LogoText>
+    </Container>
+  );
 }
 
 export default Welcome;
