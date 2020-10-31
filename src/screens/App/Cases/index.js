@@ -3,13 +3,17 @@ import { View, Text } from 'react-native';
 
 import { Container } from './styles';
 
+import Header from '../../../components/Header';
+import CaseItem from '../../../components/CaseItem';
+
 const Cases = () => {
   return (
-    <Container>
-      <Text>
-        Olá, Doador
-      </Text>
-    </Container>
+    <>
+      <Header title='Casos' description='Doe para algum caso e torne o dia de alguém mais feliz'></Header>
+      <Container>
+        <CaseItem></CaseItem>
+      </Container>
+    </> 
   );
 }
 
