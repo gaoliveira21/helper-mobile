@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler';
 import React, { useState, useEffect } from 'react';
+import { ActivityIndicator } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
 import { Montserrat_700Bold } from '@expo-google-fonts/montserrat';
@@ -7,7 +8,7 @@ import { Montserrat_700Bold } from '@expo-google-fonts/montserrat';
 import AppProvider from './src/hooks/app';
 import Routes from './src/routes';
 
-import { Container, LoadingImage, LogoText, LoadingIcon, LoadingText } from './src/styles/loading';
+import { Container, LoadingImage, LogoText, LoadingText } from './src/styles/loading';
 
 import loading from './src/assets/loading.png'
 
@@ -35,7 +36,7 @@ export default function App() {
       <Container>
         <LogoText>Helper</LogoText>
         <LoadingImage source={loading} />
-        <LoadingIcon />
+        <ActivityIndicator color='#FF6B6C' size={48}/>
         <LoadingText>Carregando...</LoadingText>
       </Container>
     );

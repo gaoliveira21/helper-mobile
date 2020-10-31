@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import { AntDesign } from '@expo/vector-icons'; 
 
 export const Container = styled.View`
   align-items: center;
@@ -19,13 +18,6 @@ export const LogoText = styled.Text`
 
 export const LoadingImage = styled.Image`
   width: 100%;
-`
-
-export const LoadingIcon = styled(AntDesign).attrs({
-  name: 'loading1',
-  size: 34,
-})`
-  color: #FF6B6C;
 `
 export const LoadingText = styled.Text`
   color: #263238;
