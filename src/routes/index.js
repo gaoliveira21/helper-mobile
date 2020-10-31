@@ -1,12 +1,14 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 
+import { useApp } from '../hooks/app';
+
 import PresentationRoutes from './presentation';
 import AppRoutes from './app';
 
 const Routes = () => {
 
-  const firstAccess = false;
+  const { firstAccess } = useApp();
 
   return (
     <NavigationContainer>
