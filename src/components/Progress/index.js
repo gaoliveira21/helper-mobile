@@ -1,12 +1,15 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-import { ProgressBar, CurrentProgress } from './styles';
+import { ProgressBar, CurrentProgress, Value, ValueCollected } from './styles';
 
-const Progress = () => {
+const Progress = ({ value, valueCollected }) => {
   return (
     <ProgressBar>
-      <Text>aaaa</Text>
+      <Value>R$ {value}</Value>
+      <CurrentProgress>
+        <ValueCollected>R$ {valueCollected}</ValueCollected>
+      </CurrentProgress>
     </ProgressBar>
   );
 }
