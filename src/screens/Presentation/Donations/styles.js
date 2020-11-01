@@ -44,10 +44,10 @@ export const RowButtons = styled.View`
   margin: 48px 0;
 `;
 
-export const JumpText = styled.Text`
+export const BackText = styled.Text`
   color: #5B5F97;
-  font-size: 16px;
   font-weight: bold;
+  font-size: 16px;
 `;
 
 export const NextButton = styled(RectButton)`
@@ -59,6 +59,7 @@ export const NextButton = styled(RectButton)`
 export const TextButton = styled.Text`
   font-weight: bold;
   color: #FFF;
+  
 `;
 
 export const RowSteps = styled.View`
@@ -71,14 +72,14 @@ export const Step1 = styled.View`
   width: 24px;
   height: 24px;
   border-radius: 24px;
-  background-color: #FF6B6C;
+  background-color: #999999;
   margin: 0 24px;
 `;
 export const Step2 = styled.View`
   width: 24px;
   height: 24px;
   border-radius: 24px;
-  background-color: #999999;
+  background-color: #FF6B6C;
   margin: 0 24px;
 `;
 export const Step3 = styled.View`

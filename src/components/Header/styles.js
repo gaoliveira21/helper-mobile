@@ -4,8 +4,8 @@ export const HeaderContent = styled.View`
   background-color: #FF6B6C;
   min-height: 180px;
   width: 100%;
-  padding: 0 48px 48px;
-  justify-content: flex-end;
+  padding: 64px 48px 0;
+  justify-content: flex-start;
   align-items: flex-start;
 `;
 
