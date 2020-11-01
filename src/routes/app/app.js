@@ -36,13 +36,13 @@ const AppRoutes = () => {
     }}>
       
       <Tab.Screen
-        name="Cases"
-        component={Cases}
+        name="Profile"
+        component={Profile}
         options={{
-          tabBarLabel: 'Casos',
+          tabBarLabel: 'Perfil',
           tabBarIcon: ({ color, size, focused }) => {
             return (
-              <Entypo name="suitcase" size={size} color={focused ? color : '#999'} />
+              <FontAwesome name="user" size={size} color={focused ? color : '#999'} />
             );
           }
         }}
@@ -56,6 +56,19 @@ const AppRoutes = () => {
           tabBarIcon: ({ color, size, focused }) => {
             return (
               <Entypo name="home" size={size} color={focused ? color : '#999'} />
+              );
+            }
+          }}
+      />
+      
+      <Tab.Screen
+        name="Cases"
+        component={Cases}
+        options={{
+          tabBarLabel: 'Casos',
+          tabBarIcon: ({ color, size, focused }) => {
+            return (
+              <Entypo name="suitcase" size={size} color={focused ? color : '#999'} />
             );
           }
         }}
@@ -69,18 +82,6 @@ const AppRoutes = () => {
           tabBarIcon: ({ color, size, focused }) => {
             return (
               <FontAwesome name="institution" size={size} color={focused ? color : '#999'} />
-            );
-          }
-        }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={Profile}
-        options={{
-          tabBarLabel: 'Perfil',
-          tabBarIcon: ({ color, size, focused }) => {
-            return (
-              <FontAwesome name="user" size={size} color={focused ? color : '#999'} />
             );
           }
         }}

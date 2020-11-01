@@ -2,9 +2,9 @@ import styled from 'styled-components/native';
 
 export const HeaderContent = styled.View`
   background-color: #FF6B6C;
-  min-height: 240px;
+  min-height: 180px;
   width: 100%;
-  padding: 0 48px 64px;
+  padding: 0 48px 48px;
   justify-content: flex-end;
   align-items: flex-start;
 `;
