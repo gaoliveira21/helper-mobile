@@ -22,7 +22,6 @@ const SignIn = () => {
         <Input
           label="Email"
           placeholder="example@mail.com"
-          placeholderTextColor="#999999"
           icon={({ color }) => <MaterialIcons name="email" size={24} color={color} />}
           error=''
         />

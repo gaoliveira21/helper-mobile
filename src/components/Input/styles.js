@@ -18,7 +18,7 @@ export const InputBlock = styled.View`
   padding: 15px 10px;
   border-radius: 16px;
   margin: 5px 0;
-  border: 1px solid transparent;
+  border: 1px solid ${props => props.focused ? '#5B5F97' : 'transparent'};
 `;
 
 export const Field = styled.TextInput`
