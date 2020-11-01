@@ -40,6 +40,7 @@ const AuthRoutes = () => {
           </TouchableOpacity>
         )
       })} />
+
       <Stack.Screen name="SignUpStep2" component={Step2} options={({ navigation }) => ({
         title: 'Cadastro',
         headerTitleAlign: 'center',
@@ -49,6 +50,7 @@ const AuthRoutes = () => {
           </TouchableOpacity>
         )
       })} />
+
       <Stack.Screen name="SignUpConfirmation" component={Confirmation} options={({ navigation }) => ({
         title: 'Cadastro',
         headerTitleAlign: 'center',
@@ -58,6 +60,7 @@ const AuthRoutes = () => {
           </TouchableOpacity>
         )
       })} />
+      
       <Stack.Screen name="SignUpSuccess" component={Success} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
