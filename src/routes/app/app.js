@@ -34,18 +34,7 @@ const AppRoutes = () => {
       inactiveTintColor: '#999999',
       activeTintColor: '#FF6B6C',
     }}>
-      <Tab.Screen
-        name="Dashboard"
-        component={Dashboard}
-        options={{
-          tabBarLabel: 'Inicio',
-          tabBarIcon: ({ color, size, focused }) => {
-            return (
-              <Entypo name="home" size={size} color={focused ? color : '#999'} />
-            );
-          }
-        }}
-      />
+      
       <Tab.Screen
         name="Cases"
         component={Cases}
@@ -58,6 +47,20 @@ const AppRoutes = () => {
           }
         }}
       />
+
+      <Tab.Screen
+        name="Dashboard"
+        component={Dashboard}
+        options={{
+          tabBarLabel: 'Inicio',
+          tabBarIcon: ({ color, size, focused }) => {
+            return (
+              <Entypo name="home" size={size} color={focused ? color : '#999'} />
+            );
+          }
+        }}
+      />
+      
       <Tab.Screen
         name="Entities"
         component={Entities}
