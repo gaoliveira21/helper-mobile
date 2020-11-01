@@ -12,7 +12,7 @@ const Stack = createStackNavigator();
 const AuthRoutes = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
       <Stack.Screen name="ChangePassword" component={ChangePassword} />
       <Stack.Screen name="CreditCard" component={CreditCard} />
       <Stack.Screen name="NewCreditCard" component={NewCreditCard} />

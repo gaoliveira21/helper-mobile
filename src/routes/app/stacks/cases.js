@@ -11,10 +11,10 @@ const Stack = createStackNavigator();
 const AuthRoutes = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Cases" component={Cases} />
+      <Stack.Screen name="Cases" component={Cases} options={{ headerShown: false }}/>
       <Stack.Screen name="Details" component={Details} />
       <Stack.Screen name="Payment" component={Payment} />
-      <Stack.Screen name="Success" component={Success} />
+      <Stack.Screen name="Success" component={Success} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 }
