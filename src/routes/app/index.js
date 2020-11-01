@@ -5,7 +5,7 @@ import AppRoutes from './app';
 
 const Routes = () => {
 
-  const signed = false;
+  const signed = true;
 
   return signed ? <AppRoutes /> : <AuthRoutes />;
 }
