@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 import Input from '../../../../../components/Input'
+import Avatar from '../../../../../components/AvatarInput';
 
 import { Container, Form, ConfirmationButton, ConfirmationButtonText } from './styles';
 
@@ -14,6 +15,7 @@ const Confirmation = () => {
     <Container>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Form>
+          <Avatar image='' />
           <Input
             label="Nome completo"
             placeholder="Insira seu nome completo"

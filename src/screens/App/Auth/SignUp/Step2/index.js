@@ -3,6 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 import Input from '../../../../../components/Input'
+import Avatar from '../../../../../components/AvatarInput';
 
 import { Container, Form, NextButton, NextButtonText } from './styles';
 
@@ -12,6 +13,7 @@ const Step2 = () => {
   return (
     <Container>
       <Form>
+        <Avatar image='' />
         <Input
           label="Telefone"
           placeholder="(XX) XXXXX-XXXX"
