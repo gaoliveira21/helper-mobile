@@ -1,15 +1,12 @@
 import React from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
 
+import Input from '../../../../components/Input';
+
 import {
   Container,
   Title,
   Form,
-  InputContent,
-  Label,
-  Input,
-  Field,
-  Error,
   SubmitButton,
   SignUpButton,
   ForgotPasswordText,
@@ -22,23 +19,21 @@ const SignIn = () => {
     <Container>
       <Title>Login</Title>
       <Form>
-        <InputContent>
-          <Label>Email</Label>
-          <Input>
-            <Field placeholder="example@mail.com" placeholderTextColor="#999999" />
-            <MaterialIcons name="email" size={24} color="#999999" />
-          </Input>
-          <Error>Error message example</Error>
-        </InputContent>
+        <Input
+          label="Email"
+          placeholder="example@mail.com"
+          placeholderTextColor="#999999"
+          icon={({ color }) => <MaterialIcons name="email" size={24} color={color} />}
+          error=''
+        />
 
-        <InputContent>
-          <Label>Senha</Label>
-          <Input>
-            <Field placeholder="***********" placeholderTextColor="#999999" />
-            <MaterialIcons name="remove-red-eye" size={24} color="#999999" />
-          </Input>
-          <Error>Error message example</Error>
-        </InputContent>
+        <Input
+          label="Senha"
+          placeholder="***********"
+          placeholderTextColor="#999999"
+          icon={({ color }) => <MaterialIcons name="remove-red-eye" size={24} color={color}/>}
+          error=''
+        />
         <SubmitButton>
           <ButtonText>Entrar</ButtonText>
         </SubmitButton>
