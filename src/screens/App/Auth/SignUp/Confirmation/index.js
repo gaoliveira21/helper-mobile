@@ -62,7 +62,7 @@ const Confirmation = () => {
             error=''
           />
 
-          <ConfirmationButton onPress={() => navigation.navigate('SignUpConfirmation')}>
+          <ConfirmationButton onPress={() => navigation.navigate('SignUpSuccess')}>
             <ConfirmationButtonText>Confirmar cadastro</ConfirmationButtonText>
           </ConfirmationButton>
         </Form>
