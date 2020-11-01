@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 import Input from '../../../../components/Input';
@@ -15,6 +16,8 @@ import {
 } from './styles';
 
 const SignIn = () => {
+  const navigation = useNavigation();
+
   return (
     <Container>
       <Title>Login</Title>
@@ -36,7 +39,7 @@ const SignIn = () => {
         <SubmitButton>
           <ButtonText>Entrar</ButtonText>
         </SubmitButton>
-        <SignUpButton>
+        <SignUpButton onPress={() => navigation.navigate('SignUpStep1')}>
           <ButtonText>Cadastrar-se</ButtonText>
         </SignUpButton>
       </Form>

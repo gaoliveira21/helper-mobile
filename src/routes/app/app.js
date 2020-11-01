@@ -34,19 +34,6 @@ const AppRoutes = () => {
       inactiveTintColor: '#999999',
       activeTintColor: '#FF6B6C',
     }}>
-      
-      <Tab.Screen
-        name="Profile"
-        component={Profile}
-        options={{
-          tabBarLabel: 'Perfil',
-          tabBarIcon: ({ color, size, focused }) => {
-            return (
-              <FontAwesome name="user" size={size} color={focused ? color : '#999'} />
-            );
-          }
-        }}
-      />
 
       <Tab.Screen
         name="Dashboard"
@@ -56,11 +43,11 @@ const AppRoutes = () => {
           tabBarIcon: ({ color, size, focused }) => {
             return (
               <Entypo name="home" size={size} color={focused ? color : '#999'} />
-              );
-            }
-          }}
+            );
+          }
+        }}
       />
-      
+
       <Tab.Screen
         name="Cases"
         component={Cases}
@@ -73,7 +60,7 @@ const AppRoutes = () => {
           }
         }}
       />
-      
+
       <Tab.Screen
         name="Entities"
         component={Entities}
@@ -82,6 +69,19 @@ const AppRoutes = () => {
           tabBarIcon: ({ color, size, focused }) => {
             return (
               <FontAwesome name="institution" size={size} color={focused ? color : '#999'} />
+            );
+          }
+        }}
+      />
+
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarLabel: 'Perfil',
+          tabBarIcon: ({ color, size, focused }) => {
+            return (
+              <FontAwesome name="user" size={size} color={focused ? color : '#999'} />
             );
           }
         }}
