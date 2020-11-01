@@ -3,9 +3,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Entypo, FontAwesome } from '@expo/vector-icons';
 
 import Dashboard from '../../screens/App/Dashboard';
-import Cases from '../../screens/App/Cases';
-import Entities from '../../screens/App/Entities';
-import Profile from '../../screens/App/Profile';
+import CaseStack from './stacks/cases';
+import EntityStack from './stacks/entities';
+import ProfileStack from './stacks/profile';
 
 const Tab = createBottomTabNavigator();
 
@@ -50,7 +50,7 @@ const AppRoutes = () => {
 
       <Tab.Screen
         name="Cases"
-        component={Cases}
+        component={CaseStack}
         options={{
           tabBarLabel: 'Casos',
           tabBarIcon: ({ color, size, focused }) => {
@@ -63,7 +63,7 @@ const AppRoutes = () => {
 
       <Tab.Screen
         name="Entities"
-        component={Entities}
+        component={EntityStack}
         options={{
           tabBarLabel: 'Instituições',
           tabBarIcon: ({ color, size, focused }) => {
@@ -76,7 +76,7 @@ const AppRoutes = () => {
 
       <Tab.Screen
         name="Profile"
-        component={Profile}
+        component={ProfileStack}
         options={{
           tabBarLabel: 'Perfil',
           tabBarIcon: ({ color, size, focused }) => {

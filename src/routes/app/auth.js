@@ -7,6 +7,7 @@ import SignIn from '../../screens/App/Auth/SignIn';
 import Step1 from '../../screens/App/Auth/SignUp/Step1';
 import Step2 from '../../screens/App/Auth/SignUp/Step2';
 import Confirmation from '../../screens/App/Auth/SignUp/Confirmation';
+import Success from '../../screens/App/Auth/SignUp/Success';
 
 const Stack = createStackNavigator();
 
@@ -39,6 +40,7 @@ const AuthRoutes = () => {
           </TouchableOpacity>
         )
       })} />
+
       <Stack.Screen name="SignUpStep2" component={Step2} options={({ navigation }) => ({
         title: 'Cadastro',
         headerTitleAlign: 'center',
@@ -48,6 +50,7 @@ const AuthRoutes = () => {
           </TouchableOpacity>
         )
       })} />
+
       <Stack.Screen name="SignUpConfirmation" component={Confirmation} options={({ navigation }) => ({
         title: 'Cadastro',
         headerTitleAlign: 'center',
@@ -57,6 +60,8 @@ const AuthRoutes = () => {
           </TouchableOpacity>
         )
       })} />
+      
+      <Stack.Screen name="SignUpSuccess" component={Success} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 }

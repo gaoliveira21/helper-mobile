@@ -1,13 +1,15 @@
 import React from 'react';
-import { View, Image, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-import { Card, Container, ImageContent, CaseImage, Date, Title, Entity, Description, DonateBox, DonateButton, TextButton} from './styles';
+import { Card, Container, ImageContent, CaseImage, Date, Title, Entity, Description, DonateButton, TextButton } from './styles';
 
 import Progress from '../Progress';
 
 import Negoney from '../../assets/negoney.jpg';
 
-const CaseItem = ({ imageCase, caseDate, title, entity, description, caseValue, caseValueCollected }) => {
+const CaseItem = ({ caseDate, title, entity, description, caseValue, caseValueCollected }) => {
+  const navigation = useNavigation();
+
   return (
     <Card>
       <ImageContent>
@@ -20,7 +22,9 @@ const CaseItem = ({ imageCase, caseDate, title, entity, description, caseValue, 
         <Description>{description}</Description>
         <Progress value={caseValue} valueCollected={caseValueCollected} />
       </Container>
-      <DonateButton><TextButton>DOAR</TextButton></DonateButton>
+      <DonateButton onPress={() => navigation.navigate('Details')}>
+        <TextButton>DOAR</TextButton>
+      </DonateButton>
     </Card>
   );
 }
