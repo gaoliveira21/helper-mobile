@@ -7,6 +7,7 @@ import SignIn from '../../screens/App/Auth/SignIn';
 import Step1 from '../../screens/App/Auth/SignUp/Step1';
 import Step2 from '../../screens/App/Auth/SignUp/Step2';
 import Confirmation from '../../screens/App/Auth/SignUp/Confirmation';
+import Success from '../../screens/App/Auth/SignUp/Success';
 
 const Stack = createStackNavigator();
 
@@ -57,6 +58,7 @@ const AuthRoutes = () => {
           </TouchableOpacity>
         )
       })} />
+      <Stack.Screen name="SignUpSuccess" component={Success} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 }
