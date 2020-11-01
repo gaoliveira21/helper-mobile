@@ -34,7 +34,15 @@ const AuthRoutes = () => {
           </TouchableOpacity>
         )
       })} />
-      <Stack.Screen name="SignUpStep2" component={Step2} options={{ headerShown: false }} />
+      <Stack.Screen name="SignUpStep2" component={Step2} options={({ navigation }) => ({
+        title: 'Cadastro',
+        headerTitleAlign: 'center',
+        headerLeft: () => (
+          <TouchableOpacity onPress={() => navigation.navigate('SignUpStep1')}>
+            <Entypo name="chevron-left" size={28} color="#FF6B6C" />
+          </TouchableOpacity>
+        )
+      })} />
     </Stack.Navigator>
   );
 }
