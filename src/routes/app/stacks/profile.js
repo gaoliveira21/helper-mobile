@@ -12,7 +12,7 @@ import Success from '../../../screens/App/Profile/Success';
 
 const Stack = createStackNavigator();
 
-const AuthRoutes = ({ navigation, route }) => {
+const ProfileRoutes = ({ navigation, route }) => {
   useLayoutEffect(() => {
     const routeName = getFocusedRouteNameFromRoute(route);
 
@@ -70,4 +70,4 @@ const AuthRoutes = ({ navigation, route }) => {
   );
 }
 
-export default AuthRoutes;
+export default ProfileRoutes;

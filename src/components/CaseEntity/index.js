@@ -1,11 +1,13 @@
 import React from 'react';
-import { View, Image, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import { Card, Container, ImageContent, EntityImage, Name, Initials, Description, ProfileButton, TextButton } from './styles';
 
 import Negoney from '../../assets/negoney.jpg';
 
 const CaseEntity = ({ imageEntity, name, initials, description }) => {
+  const navigation = useNavigation();
+
   return (
     <Card>
       <ImageContent>
@@ -16,7 +18,9 @@ const CaseEntity = ({ imageEntity, name, initials, description }) => {
         <Initials>{initials}</Initials>
         <Description>{description}</Description>
       </Container>
-      <ProfileButton><TextButton>Ver Perfil</TextButton></ProfileButton>
+      <ProfileButton onPress={() => navigation.navigate('Details')}>
+        <TextButton>Ver Perfil</TextButton>
+      </ProfileButton>
     </Card>
   );
 }
