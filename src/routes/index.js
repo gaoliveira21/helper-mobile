@@ -9,7 +9,7 @@ import AppRoutes from './app';
 const Routes = () => {
 
   // const { firstAccess } = useApp();
-  const firstAccess = false;
+  const firstAccess = true;
 
   return (
     <NavigationContainer>
