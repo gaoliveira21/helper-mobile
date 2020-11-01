@@ -7,7 +7,7 @@ import Progress from '../Progress';
 
 import Negoney from '../../assets/negoney.jpg';
 
-const CaseItem = ({ caseDate, title, entity, description, caseValue, caseValueCollected }) => {
+const CaseItem = ({ imageCase, caseDate, title, entity, description, caseValue, caseValueCollected }) => {
   return (
     <Card>
       <ImageContent>

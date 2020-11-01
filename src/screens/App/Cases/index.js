@@ -12,6 +12,7 @@ const Cases = () => {
       <Header title='Casos' description='Doe para algum caso e torne o dia de alguém mais feliz'></Header>
       <Container>
         <CaseItem 
+          imageCase = ''
           caseDate = '31/10/2020'
           title='Titulo do caso' 
           entity='Por: Nome da instituição'
