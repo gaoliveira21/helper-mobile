@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import SignIn from '../../screens/App/Auth/SignIn';
 import Step1 from '../../screens/App/Auth/SignUp/Step1';
 import Step2 from '../../screens/App/Auth/SignUp/Step2';
+import Confirmation from '../../screens/App/Auth/SignUp/Confirmation';
 
 const Stack = createStackNavigator();
 
@@ -13,7 +14,11 @@ const AuthRoutes = () => {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerTransparent: true,
+        headerStyle: {
+          backgroundColor: '#F9F9F9',
+          elevation: 0,
+          shadowOpacity: 0,
+        },
         headerTintColor: '#FF6B6C',
         headerTitleStyle: {
           fontWeight: 'bold',
@@ -39,6 +44,15 @@ const AuthRoutes = () => {
         headerTitleAlign: 'center',
         headerLeft: () => (
           <TouchableOpacity onPress={() => navigation.navigate('SignUpStep1')}>
+            <Entypo name="chevron-left" size={28} color="#FF6B6C" />
+          </TouchableOpacity>
+        )
+      })} />
+      <Stack.Screen name="SignUpConfirmation" component={Confirmation} options={({ navigation }) => ({
+        title: 'Cadastro',
+        headerTitleAlign: 'center',
+        headerLeft: () => (
+          <TouchableOpacity onPress={() => navigation.navigate('SignUpStep2')}>
             <Entypo name="chevron-left" size={28} color="#FF6B6C" />
           </TouchableOpacity>
         )

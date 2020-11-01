@@ -24,10 +24,9 @@ export const Description = styled.Text`
 
 export const Form = styled.View`
   width: 100%;
-  margin-top: 36px;
 `;
 
-export const NextButton = styled(RectButton)`
+export const ConfirmationButton = styled(RectButton)`
   background: #FF6B6C;
   align-items: center;
   justify-content: center;
@@ -36,19 +35,8 @@ export const NextButton = styled(RectButton)`
   margin: 10px 0;
 `;
 
-export const NextButtonText = styled.Text`
+export const ConfirmationButtonText = styled.Text`
   font-weight: bold;
   color: #fff;
   font-size: 16px;
-`;
-
-export const HaveAccountText = styled.Text`
-  color: #5B5F97;
-  font-size: 14px;
-  margin-top: 25px;
-  text-align: center;
-`;
-
-export const ClickHere = styled.Text`
-  font-weight: bold;
 `;

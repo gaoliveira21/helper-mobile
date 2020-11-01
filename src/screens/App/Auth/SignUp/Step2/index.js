@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 import Input from '../../../../../components/Input'
@@ -6,6 +7,8 @@ import Input from '../../../../../components/Input'
 import { Container, Form, NextButton, NextButtonText } from './styles';
 
 const Step2 = () => {
+  const navigation = useNavigation();
+
   return (
     <Container>
       <Form>
@@ -33,7 +36,7 @@ const Step2 = () => {
           error=''
         />
 
-        <NextButton>
+        <NextButton onPress={() => navigation.navigate('SignUpConfirmation')}>
           <NextButtonText>Próximo</NextButtonText>
         </NextButton>
       </Form>

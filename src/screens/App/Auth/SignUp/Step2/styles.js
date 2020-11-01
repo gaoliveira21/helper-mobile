@@ -6,11 +6,11 @@ export const Container = styled.View`
   flex: 1;
   padding: 25px;
   justify-content: center;
+  background: #F9F9F9;
 `;
 
 export const Form = styled.View`
   width: 100%;
-  margin-top: 36px;
 `;
 
 export const NextButton = styled(RectButton)`
