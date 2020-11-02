@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import PropTypes from 'prop-types';
 
 import { ProgressBar, CurrentProgress, Value, ValueCollected } from './styles';
 
@@ -12,6 +12,11 @@ const Progress = ({ value, valueCollected }) => {
       </CurrentProgress>
     </ProgressBar>
   );
+};
+
+Progress.propTypes = {
+  value: PropTypes.number.isRequired,
+  valueCollected: PropTypes.number.isRequired,
 };
 
 export default Progress;

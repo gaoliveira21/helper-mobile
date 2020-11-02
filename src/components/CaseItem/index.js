@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useNavigation } from '@react-navigation/native';
 
 import {
@@ -45,6 +46,15 @@ const CaseItem = ({
       </DonateButton>
     </Card>
   );
+};
+
+CaseItem.propTypes = {
+  caseDate: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  entity: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  caseValue: PropTypes.string.isRequired,
+  caseValueCollected: PropTypes.string.isRequired,
 };
 
 export default CaseItem;

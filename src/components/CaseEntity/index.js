@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useNavigation } from '@react-navigation/native';
 
 import {
@@ -21,7 +22,7 @@ const CaseEntity = ({ imageEntity, name, initials, description }) => {
   return (
     <Card>
       <ImageContent>
-        <EntityImage source={Negoney} />
+        <EntityImage source={imageEntity || Negoney} />
       </ImageContent>
       <Container>
         <Name>{name}</Name>
@@ -33,6 +34,17 @@ const CaseEntity = ({ imageEntity, name, initials, description }) => {
       </ProfileButton>
     </Card>
   );
+};
+
+CaseEntity.propTypes = {
+  imageEntity: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  initials: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};
+
+CaseEntity.defaultProps = {
+  imageEntity: null,
 };
 
 export default CaseEntity;
