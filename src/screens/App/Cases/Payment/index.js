@@ -77,7 +77,11 @@ const Payment = () => {
           <CheckText>Tornar essa doação anônima</CheckText>
         </CheckAnonymous>
 
-        <ConfirmButton onPress={() => {}}>
+        <ConfirmButton
+          onPress={() => {
+            navigation.navigate('Success');
+          }}
+        >
           <TextButton>Confirmar doação</TextButton>
         </ConfirmButton>
       </Container>
