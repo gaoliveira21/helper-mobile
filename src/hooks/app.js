@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
+import PropTypes from 'prop-types';
 import AsyncStorage from '@react-native-community/async-storage';
 
 const AppContext = createContext({});
@@ -31,5 +32,9 @@ export function useApp() {
 
   return app;
 }
+
+AppProvider.propTypes = {
+  children: PropTypes.element.isRequired,
+};
 
 export default AppProvider;
