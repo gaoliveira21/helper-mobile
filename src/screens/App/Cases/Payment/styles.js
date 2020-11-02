@@ -1,13 +1,19 @@
 import styled from 'styled-components/native';
+import { RectButton } from 'react-native-gesture-handler';
+import { CheckBox } from 'react-native';
 
 export const Container = styled.View`
   padding: 48px 24px;
   flex: 1;
 `;
 
+export const ContentBox = styled.View`
+  margin-top: 24px;
+`;
+
 export const Title = styled.Text`
   color: #263238;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
 `;
 
@@ -46,19 +52,47 @@ export const NumberCard = styled.Text`
 `;
 
 export const RegisterCreditCard = styled.View`
-  padding: 18px 24px;
-  border: 2px dashed #263238;
-  border-radius: 8px;
+  padding: 18px 4px;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
+`;
 
-  margin-top: 24px;
+export const AddCardButton = styled.Text`
+  margin-left: 12px;
+  color: #5b5f97;
+  font-size: 16px;
+  font-weight: bold;
+`;
+
+export const CheckAnonymous = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin-bottom: 24px;
+`;
+
+export const Check = styled(CheckBox)`
+  margin-right: 8px;
+`;
+
+export const CheckText = styled.Text`
+  font-weight: bold;
+  color: #263238;
+`;
+
+export const ConfirmButton = styled(RectButton)`
+  width: 100%;
+  padding: 24px 0;
+  background-color: #6fcf97;
+
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const TextButton = styled.Text`
-  margin-left: 18px;
-  color: #263238;
-  font-size: 16px;
+  color: #fff;
   font-weight: bold;
 `;

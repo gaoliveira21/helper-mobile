@@ -5,6 +5,7 @@ import { RectButton } from 'react-native-gesture-handler';
 export const Card = styled.View`
   background-color: #fff;
   border-radius: 8px;
+  margin-bottom: 36px;
 `;
 
 export const Container = styled.View`
