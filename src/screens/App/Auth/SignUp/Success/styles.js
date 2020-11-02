@@ -7,7 +7,7 @@ export const Container = styled.View`
   padding: 25px;
   justify-content: center;
   align-items: center;
-  background: #F9F9F9;
+  background: #f9f9f9;
 `;
 
 export const Title = styled.Text`
@@ -19,7 +19,7 @@ export const Title = styled.Text`
 `;
 
 export const AccessButton = styled(RectButton)`
-  background: #FF6B6C;
+  background: #ff6b6c;
   align-items: center;
   justify-content: center;
   padding: 20px;
@@ -33,4 +33,3 @@ export const AccessButtonText = styled.Text`
   color: #fff;
   font-size: 16px;
 `;
-

@@ -30,40 +30,64 @@ const AuthRoutes = () => {
         },
       }}
     >
-      <Stack.Screen name="SignIn" component={SignIn} options={{ headerShown: false }} />
-      <Stack.Screen name="SignUpStep1" component={Step1} options={({ navigation }) => ({
-        title: 'Cadastro',
-        headerTitleAlign: 'center',
-        headerLeft: () => (
-          <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
-            <Entypo name="chevron-left" size={28} color="#FF6B6C" />
-          </TouchableOpacity>
-        )
-      })} />
+      <Stack.Screen
+        name="SignIn"
+        component={SignIn}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="SignUpStep1"
+        component={Step1}
+        options={({ navigation }) => ({
+          title: 'Cadastro',
+          headerTitleAlign: 'center',
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
+              <Entypo name="chevron-left" size={28} color="#FF6B6C" />
+            </TouchableOpacity>
+          ),
+        })}
+      />
 
-      <Stack.Screen name="SignUpStep2" component={Step2} options={({ navigation }) => ({
-        title: 'Cadastro',
-        headerTitleAlign: 'center',
-        headerLeft: () => (
-          <TouchableOpacity onPress={() => navigation.navigate('SignUpStep1')}>
-            <Entypo name="chevron-left" size={28} color="#FF6B6C" />
-          </TouchableOpacity>
-        )
-      })} />
+      <Stack.Screen
+        name="SignUpStep2"
+        component={Step2}
+        options={({ navigation }) => ({
+          title: 'Cadastro',
+          headerTitleAlign: 'center',
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() => navigation.navigate('SignUpStep1')}
+            >
+              <Entypo name="chevron-left" size={28} color="#FF6B6C" />
+            </TouchableOpacity>
+          ),
+        })}
+      />
 
-      <Stack.Screen name="SignUpConfirmation" component={Confirmation} options={({ navigation }) => ({
-        title: 'Cadastro',
-        headerTitleAlign: 'center',
-        headerLeft: () => (
-          <TouchableOpacity onPress={() => navigation.navigate('SignUpStep2')}>
-            <Entypo name="chevron-left" size={28} color="#FF6B6C" />
-          </TouchableOpacity>
-        )
-      })} />
-      
-      <Stack.Screen name="SignUpSuccess" component={Success} options={{ headerShown: false }} />
+      <Stack.Screen
+        name="SignUpConfirmation"
+        component={Confirmation}
+        options={({ navigation }) => ({
+          title: 'Cadastro',
+          headerTitleAlign: 'center',
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() => navigation.navigate('SignUpStep2')}
+            >
+              <Entypo name="chevron-left" size={28} color="#FF6B6C" />
+            </TouchableOpacity>
+          ),
+        })}
+      />
+
+      <Stack.Screen
+        name="SignUpSuccess"
+        component={Success}
+        options={{ headerShown: false }}
+      />
     </Stack.Navigator>
   );
-}
+};
 
 export default AuthRoutes;

@@ -11,30 +11,31 @@ const Tab = createBottomTabNavigator();
 
 const AppRoutes = () => {
   return (
-    <Tab.Navigator tabBarOptions={{
-      style: {
-        borderTopWidth: 0,
-        elevation: 0,
-        shadowOpacity: 0,
-        height: 64,
-      },
-      tabStyle: {
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
-      iconStyle: {
-        flex: 0,
-        width: 20,
-        height: 20,
-      },
-      labelStyle: {
-        fontSize: 14,
-      },
-      inactiveTintColor: '#999999',
-      activeTintColor: '#FF6B6C',
-    }}>
-
+    <Tab.Navigator
+      tabBarOptions={{
+        style: {
+          borderTopWidth: 0,
+          elevation: 0,
+          shadowOpacity: 0,
+          height: 64,
+        },
+        tabStyle: {
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+        },
+        iconStyle: {
+          flex: 0,
+          width: 20,
+          height: 20,
+        },
+        labelStyle: {
+          fontSize: 14,
+        },
+        inactiveTintColor: '#999999',
+        activeTintColor: '#FF6B6C',
+      }}
+    >
       <Tab.Screen
         name="Dashboard"
         component={Dashboard}
@@ -42,9 +43,13 @@ const AppRoutes = () => {
           tabBarLabel: 'Inicio',
           tabBarIcon: ({ color, size, focused }) => {
             return (
-              <Entypo name="home" size={size} color={focused ? color : '#999'} />
+              <Entypo
+                name="home"
+                size={size}
+                color={focused ? color : '#999'}
+              />
             );
-          }
+          },
         }}
       />
 
@@ -55,9 +60,13 @@ const AppRoutes = () => {
           tabBarLabel: 'Casos',
           tabBarIcon: ({ color, size, focused }) => {
             return (
-              <Entypo name="suitcase" size={size} color={focused ? color : '#999'} />
+              <Entypo
+                name="suitcase"
+                size={size}
+                color={focused ? color : '#999'}
+              />
             );
-          }
+          },
         }}
       />
 
@@ -68,9 +77,13 @@ const AppRoutes = () => {
           tabBarLabel: 'Instituições',
           tabBarIcon: ({ color, size, focused }) => {
             return (
-              <FontAwesome name="institution" size={size} color={focused ? color : '#999'} />
+              <FontAwesome
+                name="institution"
+                size={size}
+                color={focused ? color : '#999'}
+              />
             );
-          }
+          },
         }}
       />
 
@@ -81,13 +94,17 @@ const AppRoutes = () => {
           tabBarLabel: 'Perfil',
           tabBarIcon: ({ color, size, focused }) => {
             return (
-              <FontAwesome name="user" size={size} color={focused ? color : '#999'} />
+              <FontAwesome
+                name="user"
+                size={size}
+                color={focused ? color : '#999'}
+              />
             );
-          }
+          },
         }}
       />
     </Tab.Navigator>
   );
-}
+};
 
 export default AppRoutes;

@@ -5,6 +5,6 @@ import { View } from 'react-native';
 
 const Success = () => {
   return <View />;
-}
+};
 
 export default Success;

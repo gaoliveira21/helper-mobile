@@ -5,15 +5,15 @@ export const ProgressBar = styled.View`
   height: 36px;
   margin: 12px 0;
   padding: 0 8px;
-  background-color: #DFE4EA;
+  background-color: #dfe4ea;
   border-radius: 8px;
   justify-content: center;
 `;
 
-export const Value = styled.Text` 
+export const Value = styled.Text`
   align-self: flex-end;
 `;
-export const ValueCollected = styled.Text` 
+export const ValueCollected = styled.Text`
   align-self: flex-end;
   color: #fff;
 `;
@@ -25,5 +25,5 @@ export const CurrentProgress = styled.View`
   padding: 0 8px;
   justify-content: center;
   border-radius: 8px;
-  background-color: #5B5F97;
+  background-color: #5b5f97;
 `;

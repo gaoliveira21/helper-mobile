@@ -12,7 +12,7 @@ import {
   SignUpButton,
   ForgotPasswordText,
   ClickHere,
-  ButtonText
+  ButtonText,
 } from './styles';
 
 const SignIn = () => {
@@ -25,16 +25,20 @@ const SignIn = () => {
         <Input
           label="Email"
           placeholder="example@mail.com"
-          icon={({ color }) => <MaterialIcons name="email" size={24} color={color} />}
-          error=''
+          icon={({ color }) => (
+            <MaterialIcons name="email" size={24} color={color} />
+          )}
+          error=""
         />
 
         <Input
           label="Senha"
           placeholder="***********"
           placeholderTextColor="#999999"
-          icon={({ color }) => <MaterialIcons name="remove-red-eye" size={24} color={color}/>}
-          error=''
+          icon={({ color }) => (
+            <MaterialIcons name="remove-red-eye" size={24} color={color} />
+          )}
+          error=""
         />
         <SubmitButton>
           <ButtonText>Entrar</ButtonText>
@@ -48,6 +52,6 @@ const SignIn = () => {
       </ForgotPasswordText>
     </Container>
   );
-}
+};
 
 export default SignIn;

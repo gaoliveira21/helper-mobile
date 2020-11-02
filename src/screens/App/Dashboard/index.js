@@ -2,9 +2,17 @@ import React from 'react';
 
 import { View, Text } from 'react-native';
 
-import { FontAwesome5 } from '@expo/vector-icons'; 
+import { FontAwesome5 } from '@expo/vector-icons';
 
-import { Container, Header, ImageProfile, TotalDonations, SmallText, MediumText, LargeBoldText } from './styles';
+import {
+  Container,
+  Header,
+  ImageProfile,
+  TotalDonations,
+  SmallText,
+  MediumText,
+  LargeBoldText,
+} from './styles';
 
 const Dashboard = () => {
   return (
@@ -24,6 +32,6 @@ const Dashboard = () => {
       </Container>
     </>
   );
-}
+};
 
 export default Dashboard;

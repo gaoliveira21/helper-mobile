@@ -5,6 +5,6 @@ import { View } from 'react-native';
 
 const NewCreditCard = () => {
   return <View />;
-}
+};
 
 export default NewCreditCard;

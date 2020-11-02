@@ -10,7 +10,7 @@ export const Container = styled.View`
 
 export const Title = styled.Text`
   font-size: 56px;
-  color: #FF6B6C;
+  color: #ff6b6c;
   font-weight: bold;
 `;
 
@@ -20,7 +20,7 @@ export const Form = styled.View`
 `;
 
 export const SubmitButton = styled(RectButton)`
-  background: #FF6B6C;
+  background: #ff6b6c;
   align-items: center;
   justify-content: center;
   padding: 20px;
@@ -29,7 +29,7 @@ export const SubmitButton = styled(RectButton)`
 `;
 
 export const SignUpButton = styled(RectButton)`
-  background: #5B5F97;
+  background: #5b5f97;
   align-items: center;
   justify-content: center;
   padding: 20px;
@@ -44,7 +44,7 @@ export const ButtonText = styled.Text`
 `;
 
 export const ForgotPasswordText = styled.Text`
-  color: #5B5F97;
+  color: #5b5f97;
   font-size: 14px;
   margin-top: 25px;
   text-align: center;

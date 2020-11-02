@@ -10,6 +10,6 @@ const Header = ({ title, description }) => {
       <SmallText>{description}</SmallText>
     </HeaderContent>
   );
-}
+};
 
 export default Header;

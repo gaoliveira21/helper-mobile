@@ -14,11 +14,11 @@ const EntitiesRoutes = ({ navigation, route }) => {
     const routeName = getFocusedRouteNameFromRoute(route);
 
     if (routeName && routeName !== 'Entity') {
-      navigation.setOptions({ tabBarVisible: false })
+      navigation.setOptions({ tabBarVisible: false });
     } else {
-      navigation.setOptions({ tabBarVisible: true })
+      navigation.setOptions({ tabBarVisible: true });
     }
-  }, [navigation, route])
+  }, [navigation, route]);
 
   return (
     <Stack.Navigator
@@ -38,18 +38,26 @@ const EntitiesRoutes = ({ navigation, route }) => {
         },
       }}
     >
-      <Stack.Screen name="Entity" component={Entity} options={{ headerShown: false }} />
-      <Stack.Screen name="Details" component={Details} options={({ navigation }) => ({
-        title: 'Perfil da instituição',
-        headerTitleAlign: 'center',
-        headerLeft: () => (
-          <TouchableOpacity onPress={() => navigation.navigate('Entity')}>
-            <Entypo name="chevron-left" size={28} color="#FF6B6C" />
-          </TouchableOpacity>
-        )
-      })} />
+      <Stack.Screen
+        name="Entity"
+        component={Entity}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Details"
+        component={Details}
+        options={({ navigation }) => ({
+          title: 'Perfil da instituição',
+          headerTitleAlign: 'center',
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.navigate('Entity')}>
+              <Entypo name="chevron-left" size={28} color="#FF6B6C" />
+            </TouchableOpacity>
+          ),
+        })}
+      />
     </Stack.Navigator>
   );
-}
+};
 
 export default EntitiesRoutes;

@@ -8,12 +8,12 @@ export const Container = styled.View`
   flex: 1;
   width: 100%;
   padding: 0 48px;
-  background: #F9F9F9;
+  background: #f9f9f9;
 `;
 
-export const LogoText = styled.Text` 
+export const LogoText = styled.Text`
   font-family: 'Roboto';
-  color: #FF6B6C;
+  color: #ff6b6c;
   font-size: 56px;
   font-weight: bold;
   margin: 48px 0;
@@ -45,20 +45,20 @@ export const RowButtons = styled.View`
 `;
 
 export const JumpText = styled.Text`
-  color: #5B5F97;
+  color: #5b5f97;
   font-size: 16px;
   font-weight: bold;
 `;
 
 export const NextButton = styled(RectButton)`
-  background-color: #FF6B6C;
+  background-color: #ff6b6c;
   padding: 12px 18px;
   border-radius: 8px;
 `;
 
 export const TextButton = styled.Text`
   font-weight: bold;
-  color: #FFF;
+  color: #fff;
 `;
 
 export const RowSteps = styled.View`
@@ -71,7 +71,7 @@ export const Step1 = styled.View`
   width: 24px;
   height: 24px;
   border-radius: 24px;
-  background-color: #FF6B6C;
+  background-color: #ff6b6c;
   margin: 0 24px;
 `;
 export const Step2 = styled.View`

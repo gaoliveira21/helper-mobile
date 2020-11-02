@@ -12,6 +12,6 @@ const Progress = ({ value, valueCollected }) => {
       </CurrentProgress>
     </ProgressBar>
   );
-}
+};
 
 export default Progress;

@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const Header = styled.View`
-  background-color: #FF6B6C;
+  background-color: #ff6b6c;
   min-height: 180px;
   width: 100%;
   padding: 0 48px 48px;
@@ -9,9 +9,7 @@ export const Header = styled.View`
   align-items: flex-start;
 `;
 
-export const ImageProfile = styled.Image`
-
-`;
+export const ImageProfile = styled.Image``;
 
 export const Container = styled.View`
   padding: 24px;
@@ -25,23 +23,23 @@ export const TotalDonations = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #FF6B6C;
+  background-color: #ff6b6c;
   border-radius: 8px;
 `;
 
 export const SmallText = styled.Text`
   font-size: 14px;
-  color: #FFF;
+  color: #fff;
 `;
 
 export const MediumText = styled.Text`
   font-size: 18px;
   font-weight: 700;
-  color: #FFF;
+  color: #fff;
 `;
 
 export const LargeBoldText = styled.Text`
   font-size: 32px;
   font-weight: 700;
-  color: #FFF;
+  color: #fff;
 `;

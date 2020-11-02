@@ -17,11 +17,11 @@ const ProfileRoutes = ({ navigation, route }) => {
     const routeName = getFocusedRouteNameFromRoute(route);
 
     if (routeName && routeName !== 'Profile') {
-      navigation.setOptions({ tabBarVisible: false })
+      navigation.setOptions({ tabBarVisible: false });
     } else {
-      navigation.setOptions({ tabBarVisible: true })
+      navigation.setOptions({ tabBarVisible: true });
     }
-  }, [navigation, route])
+  }, [navigation, route]);
 
   return (
     <Stack.Navigator
@@ -41,33 +41,45 @@ const ProfileRoutes = ({ navigation, route }) => {
         },
       }}
     >
-      <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
+      <Stack.Screen
+        name="Profile"
+        component={Profile}
+        options={{ headerShown: false }}
+      />
 
-      <Stack.Screen name="ChangePassword" component={ChangePassword} options={({ navigation }) => ({
-        title: 'Alterar senha',
-        headerTitleAlign: 'center',
-        headerLeft: () => (
-          <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
-            <Entypo name="chevron-left" size={28} color="#FF6B6C" />
-          </TouchableOpacity>
-        )
-      })} />
+      <Stack.Screen
+        name="ChangePassword"
+        component={ChangePassword}
+        options={({ navigation }) => ({
+          title: 'Alterar senha',
+          headerTitleAlign: 'center',
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+              <Entypo name="chevron-left" size={28} color="#FF6B6C" />
+            </TouchableOpacity>
+          ),
+        })}
+      />
 
-      <Stack.Screen name="CreditCard" component={CreditCard} options={({ navigation }) => ({
-        title: 'Gerenciar cartões',
-        headerTitleAlign: 'center',
-        headerLeft: () => (
-          <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
-            <Entypo name="chevron-left" size={28} color="#FF6B6C" />
-          </TouchableOpacity>
-        )
-      })} />
+      <Stack.Screen
+        name="CreditCard"
+        component={CreditCard}
+        options={({ navigation }) => ({
+          title: 'Gerenciar cartões',
+          headerTitleAlign: 'center',
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+              <Entypo name="chevron-left" size={28} color="#FF6B6C" />
+            </TouchableOpacity>
+          ),
+        })}
+      />
 
       <Stack.Screen name="NewCreditCard" component={NewCreditCard} />
 
       <Stack.Screen name="Success" component={Success} />
     </Stack.Navigator>
   );
-}
+};
 
 export default ProfileRoutes;

@@ -5,7 +5,7 @@ import { RectButton } from 'react-native-gesture-handler';
 
 export const ImageContainer = styled.View`
   width: 180px;
-  height: 180px; 
+  height: 180px;
   margin: 24px auto;
 `;
 
@@ -28,7 +28,7 @@ export const EditButton = styled(RectButton)`
   width: 56px;
   height: 56px;
   border-radius: 56px;
-  background-color: #5B5F97;
+  background-color: #5b5f97;
   justify-content: center;
   align-items: center;
   position: absolute;

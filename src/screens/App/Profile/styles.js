@@ -20,7 +20,7 @@ export const Button = styled(RectButton)`
 `;
 
 export const TextButton = styled.Text`
-  color: #FFF;
+  color: #fff;
   margin-left: 8px;
   font-weight: bold;
 `;
@@ -28,7 +28,7 @@ export const TextButton = styled.Text`
 export const Divider = styled.View`
   height: 2px;
   width: 100%;
-  background-color: #DFE4EA;
+  background-color: #dfe4ea;
 
   margin-bottom: 24px;
 `;

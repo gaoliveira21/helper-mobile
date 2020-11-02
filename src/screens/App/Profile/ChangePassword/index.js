@@ -5,6 +5,6 @@ import { View } from 'react-native';
 
 const ChangePassword = () => {
   return <View />;
-}
+};
 
 export default ChangePassword;

@@ -11,13 +11,13 @@ export const Label = styled.Text`
 `;
 
 export const InputBlock = styled.View`
-  background: #DFE4EA;
+  background: #dfe4ea;
   flex-direction: row;
   align-items: center;
   padding: 15px 10px;
   border-radius: 16px;
   margin: 5px 0;
-  border: 1px solid ${props => props.focused ? '#5B5F97' : 'transparent'};
+  border: 1px solid ${(props) => (props.focused ? '#5B5F97' : 'transparent')};
 `;
 
 export const Field = styled.TextInput`
@@ -25,7 +25,7 @@ export const Field = styled.TextInput`
 `;
 
 export const Error = styled.Text`
-  color: #FF6B6C;
+  color: #ff6b6c;
   font-size: 14px;
   height: 24px;
 `;

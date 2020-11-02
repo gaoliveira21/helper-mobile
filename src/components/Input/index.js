@@ -15,13 +15,11 @@ const Input = ({ label, icon: Icon, error, ...rest }) => {
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
         />
-        {Icon && (
-          <Icon color={focused ? '#5B5F97' : '#999999'} />
-        )}
+        {Icon && <Icon color={focused ? '#5B5F97' : '#999999'} />}
       </InputBlock>
       <Error>{error}</Error>
     </Container>
   );
-}
+};
 
 export default Input;

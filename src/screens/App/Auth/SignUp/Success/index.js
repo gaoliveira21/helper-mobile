@@ -1,5 +1,5 @@
 import React from 'react';
-import { Feather } from '@expo/vector-icons'; 
+import { Feather } from '@expo/vector-icons';
 
 import { Container, Title, AccessButton, AccessButtonText } from './styles';
 
@@ -13,6 +13,6 @@ const Success = () => {
       </AccessButton>
     </Container>
   );
-}
+};
 
 export default Success;

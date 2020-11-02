@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const HeaderContent = styled.View`
-  background-color: #FF6B6C;
+  background-color: #ff6b6c;
   min-height: 180px;
   width: 100%;
   padding: 64px 48px 0;
@@ -11,11 +11,11 @@ export const HeaderContent = styled.View`
 
 export const SmallText = styled.Text`
   font-size: 14px;
-  color: #FFF;
+  color: #fff;
 `;
 
 export const LargeText = styled.Text`
   font-size: 24px;
   font-weight: 700;
-  color: #FFF;
+  color: #fff;
 `;

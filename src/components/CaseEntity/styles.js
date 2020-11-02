@@ -3,7 +3,7 @@ import { Image } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 
 export const Card = styled.View`
-  background-color: #FFF;
+  background-color: #fff;
   border-radius: 8px;
 `;
 
@@ -28,7 +28,6 @@ export const EntityImage = styled(Image)`
   width: 200px;
 `;
 
-
 export const Name = styled.Text`
   color: #263238;
   font-size: 24px;
@@ -36,7 +35,7 @@ export const Name = styled.Text`
 `;
 
 export const Initials = styled.Text`
-  color: #FF6B6C;
+  color: #ff6b6c;
   font-weight: 700;
 `;
 
@@ -50,7 +49,7 @@ export const Description = styled.Text`
 export const ProfileButton = styled(RectButton)`
   width: 100%;
   padding: 24px 0;
-  background-color: #6FCF97;
+  background-color: #6fcf97;
 
   border-radius: 8px;
   justify-content: center;
@@ -58,6 +57,6 @@ export const ProfileButton = styled(RectButton)`
 `;
 
 export const TextButton = styled.Text`
-  color: #FFF;
+  color: #fff;
   font-weight: bold;
 `;

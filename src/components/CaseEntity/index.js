@@ -1,7 +1,17 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 
-import { Card, Container, ImageContent, EntityImage, Name, Initials, Description, ProfileButton, TextButton } from './styles';
+import {
+  Card,
+  Container,
+  ImageContent,
+  EntityImage,
+  Name,
+  Initials,
+  Description,
+  ProfileButton,
+  TextButton,
+} from './styles';
 
 import Negoney from '../../assets/negoney.jpg';
 
@@ -11,7 +21,7 @@ const CaseEntity = ({ imageEntity, name, initials, description }) => {
   return (
     <Card>
       <ImageContent>
-        <EntityImage source={Negoney}></EntityImage>
+        <EntityImage source={Negoney} />
       </ImageContent>
       <Container>
         <Name>{name}</Name>
@@ -23,6 +33,6 @@ const CaseEntity = ({ imageEntity, name, initials, description }) => {
       </ProfileButton>
     </Card>
   );
-}
+};
 
 export default CaseEntity;

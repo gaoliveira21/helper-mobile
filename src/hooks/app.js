@@ -5,7 +5,8 @@ const AppContext = createContext({});
 
 const AppProvider = ({ children }) => {
   const [firstAccess, setFirstAccess] = useState(
-    async () => await AsyncStorage.getItem('@helper:firstAccess') === null && true
+    async () =>
+      (await AsyncStorage.getItem('@helper:firstAccess')) === null && true
   );
 
   async function presentationDone() {
@@ -17,13 +18,13 @@ const AppProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         firstAccess,
-        presentationDone
+        presentationDone,
       }}
     >
       {children}
     </AppContext.Provider>
   );
-}
+};
 
 export function useApp() {
   const app = useContext(AppContext);

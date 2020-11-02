@@ -16,11 +16,11 @@ const CasesRoutes = ({ navigation, route }) => {
     const routeName = getFocusedRouteNameFromRoute(route);
 
     if (routeName && routeName !== 'Cases') {
-      navigation.setOptions({ tabBarVisible: false })
+      navigation.setOptions({ tabBarVisible: false });
     } else {
-      navigation.setOptions({ tabBarVisible: true })
+      navigation.setOptions({ tabBarVisible: true });
     }
-  }, [navigation, route])
+  }, [navigation, route]);
 
   return (
     <Stack.Navigator
@@ -40,23 +40,35 @@ const CasesRoutes = ({ navigation, route }) => {
         },
       }}
     >
-      <Stack.Screen name="Cases" component={Cases} options={{ headerShown: false }} />
+      <Stack.Screen
+        name="Cases"
+        component={Cases}
+        options={{ headerShown: false }}
+      />
 
-      <Stack.Screen name="Details" component={Details} options={({ navigation }) => ({
-        title: 'Detalhes do caso',
-        headerTitleAlign: 'center',
-        headerLeft: () => (
-          <TouchableOpacity onPress={() => navigation.navigate('Cases')}>
-            <Entypo name="chevron-left" size={28} color="#FF6B6C" />
-          </TouchableOpacity>
-        )
-      })} />
+      <Stack.Screen
+        name="Details"
+        component={Details}
+        options={({ navigation }) => ({
+          title: 'Detalhes do caso',
+          headerTitleAlign: 'center',
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.navigate('Cases')}>
+              <Entypo name="chevron-left" size={28} color="#FF6B6C" />
+            </TouchableOpacity>
+          ),
+        })}
+      />
 
       <Stack.Screen name="Payment" component={Payment} />
-      
-      <Stack.Screen name="Success" component={Success} options={{ headerShown: false }} />
+
+      <Stack.Screen
+        name="Success"
+        component={Success}
+        options={{ headerShown: false }}
+      />
     </Stack.Navigator>
   );
-}
+};
 
 export default CasesRoutes;
