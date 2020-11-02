@@ -1,5 +1,6 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import Progress from '../../../../components/Progress';
 
@@ -21,6 +22,8 @@ import {
 import Negoney from '../../../../assets/negoney.jpg';
 
 const Details = () => {
+  const navigation = useNavigation();
+
   return (
     <ScrollView>
       <Container>
@@ -30,7 +33,7 @@ const Details = () => {
         </ContentBox>
 
         <ContentBox>
-          <DonateButton>
+          <DonateButton onPress={() => navigation.navigate('Payment')}>
             <TextButton>DOAR</TextButton>
           </DonateButton>
           <ImageContent>
