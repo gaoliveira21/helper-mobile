@@ -7,8 +7,7 @@ import PresentationRoutes from './presentation';
 import AppRoutes from './app';
 
 const Routes = () => {
-  // const { firstAccess } = useApp();
-  const firstAccess = true;
+  const { firstAccess } = useApp();
 
   return (
     <NavigationContainer>

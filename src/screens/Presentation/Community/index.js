@@ -1,7 +1,8 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-
 import { TouchableOpacity } from 'react-native';
+
+import { useApp } from '../../../hooks/app';
 
 import {
   Container,
@@ -22,6 +23,7 @@ import {
 import CommunityImg from '../../../assets/team.png';
 
 const Community = () => {
+  const { presentationDone } = useApp();
   const navigation = useNavigation();
 
   return (
@@ -39,8 +41,8 @@ const Community = () => {
             Voltar
           </BackText>
         </TouchableOpacity>
-        <NextButton onPress={() => navigation.navigate('')}>
-          <TextButton>Próximo</TextButton>
+        <NextButton onPress={() => presentationDone()}>
+          <TextButton>Acessar o app</TextButton>
         </NextButton>
       </RowButtons>
       <RowSteps>
