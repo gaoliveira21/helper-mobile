@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-shadow */
 import React, { useLayoutEffect } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
