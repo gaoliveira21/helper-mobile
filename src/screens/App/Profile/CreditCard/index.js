@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native';
 
 import { MaterialIcons } from '@expo/vector-icons';
@@ -16,6 +17,8 @@ import {
 } from './styles';
 
 const CreditCard = () => {
+  const navigation = useNavigation();
+
   return (
     <Container>
       <Title>Cartões cadastrados</Title>
@@ -37,7 +40,7 @@ const CreditCard = () => {
         </TextContent>
       </CreditCardBox>
 
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('NewCreditCard')}>
         <RegisterCreditCard>
           <MaterialIcons name="add" size={36} color="#263238" />
           <TextButton>Adicionar cartão</TextButton>
