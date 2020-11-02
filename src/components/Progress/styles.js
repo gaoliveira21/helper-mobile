@@ -3,11 +3,12 @@ import styled from 'styled-components/native';
 export const ProgressBar = styled.View`
   width: 100%;
   height: 36px;
-  margin: 12px 0;
   padding: 0 8px;
   background-color: #dfe4ea;
   border-radius: 8px;
   justify-content: center;
+
+  margin: 12px 0;
 `;
 
 export const Value = styled.Text`
