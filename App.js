@@ -1,3 +1,4 @@
+/* eslint-disable react/style-prop-object */
 import 'react-native-gesture-handler';
 import React, { useState, useEffect } from 'react';
 import { ActivityIndicator } from 'react-native';
