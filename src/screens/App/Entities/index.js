@@ -3,7 +3,7 @@ import React from 'react';
 import { Container } from './styles';
 
 import Header from '../../../components/Header';
-import CaseEntity from '../../../components/CaseEntity';
+import EntityProfile from '../../../components/EntityProfile';
 
 const Entities = () => {
   return (
@@ -13,7 +13,7 @@ const Entities = () => {
         description="Conheça as entidades mais próximas de você"
       />
       <Container>
-        <CaseEntity
+        <EntityProfile
           imageEntity=""
           name="Nome da entidade"
           initials="SIGLA"

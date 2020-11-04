@@ -1,4 +1,5 @@
 import React from 'react';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { useNavigation } from '@react-navigation/native';
 
@@ -17,7 +18,7 @@ import {
 
 import Progress from '../Progress';
 
-import Negoney from '../../assets/negoney.jpg';
+import Negoney from '../../assets/dog.jpg';
 
 const CaseItem = ({
   caseDate,
@@ -41,6 +42,7 @@ const CaseItem = ({
         <Description>{description}</Description>
         <Progress value={caseValue} valueCollected={caseValueCollected} />
       </Container>
+
       <DonateButton onPress={() => navigation.navigate('Details')}>
         <TextButton>DOAR</TextButton>
       </DonateButton>

@@ -14,15 +14,15 @@ import {
   TextButton,
 } from './styles';
 
-import Negoney from '../../assets/negoney.jpg';
+import Dog from '../../assets/dog.jpg';
 
-const CaseEntity = ({ imageEntity, name, initials, description }) => {
+const EntityProfile = ({ imageEntity, name, initials, description }) => {
   const navigation = useNavigation();
 
   return (
     <Card>
       <ImageContent>
-        <EntityImage source={imageEntity || Negoney} />
+        <EntityImage source={imageEntity || Dog} />
       </ImageContent>
       <Container>
         <Name>{name}</Name>
@@ -36,15 +36,15 @@ const CaseEntity = ({ imageEntity, name, initials, description }) => {
   );
 };
 
-CaseEntity.propTypes = {
+EntityProfile.propTypes = {
   imageEntity: PropTypes.string,
   name: PropTypes.string.isRequired,
   initials: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
 };
 
-CaseEntity.defaultProps = {
+EntityProfile.defaultProps = {
   imageEntity: null,
 };
 
-export default CaseEntity;
+export default EntityProfile;

@@ -6,6 +6,8 @@ export const Card = styled.View`
   background-color: #fff;
   border-radius: 8px;
   margin-bottom: 36px;
+
+  overflow: hidden;
 `;
 
 export const Container = styled.View`
@@ -17,14 +19,16 @@ export const ImageContent = styled.View`
   align-items: center;
   width: 100%;
   height: 180px;
-  border-radius: 8px;
   overflow: hidden;
   position: relative;
 `;
 
 export const CaseImage = styled(Image)`
   position: absolute;
-  width: 400px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 `;
 
 export const Date = styled.Text`
@@ -54,7 +58,6 @@ export const DonateButton = styled(RectButton)`
   padding: 24px 0;
   background-color: #6fcf97;
 
-  border-radius: 8px;
   justify-content: center;
   align-items: center;
 `;
