@@ -5,6 +5,8 @@ import { RectButton } from 'react-native-gesture-handler';
 export const Card = styled.View`
   background-color: #fff;
   border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 36px;
 `;
 
 export const Container = styled.View`
@@ -25,7 +27,8 @@ export const ImageContent = styled.View`
 
 export const EntityImage = styled(Image)`
   position: absolute;
-  width: 200px;
+  width: 100%;
+  height: 100%;
 `;
 
 export const Name = styled.Text`
@@ -51,7 +54,6 @@ export const ProfileButton = styled(RectButton)`
   padding: 24px 0;
   background-color: #6fcf97;
 
-  border-radius: 8px;
   justify-content: center;
   align-items: center;
 `;

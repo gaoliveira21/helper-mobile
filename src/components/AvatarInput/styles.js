@@ -21,7 +21,8 @@ export const ImageContent = styled.View`
 
 export const ProfileImage = styled(Image)`
   position: absolute;
-  width: 200px;
+  width: 100%;
+  height: 100%;
 `;
 
 export const EditButton = styled(RectButton)`

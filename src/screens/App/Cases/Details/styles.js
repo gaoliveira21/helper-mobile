@@ -56,7 +56,8 @@ export const ImageContent = styled.View`
 
 export const CaseImage = styled(Image)`
   position: absolute;
-  width: 400px;
+  width: 100%;
+  height: 100%;
 `;
 
 export const CountImages = styled.Text`

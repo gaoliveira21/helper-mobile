@@ -75,7 +75,7 @@ const AppRoutes = () => {
         name="Entities"
         component={EntityStack}
         options={{
-          tabBarLabel: 'Instituições',
+          tabBarLabel: 'Entidades',
           tabBarIcon: ({ color, size, focused }) => {
             return (
               <FontAwesome

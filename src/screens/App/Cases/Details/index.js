@@ -19,7 +19,7 @@ import {
   Description,
 } from './styles';
 
-import Negoney from '../../../../assets/negoney.jpg';
+import Dog from '../../../../assets/dog.jpg';
 
 const Details = () => {
   const navigation = useNavigation();
@@ -37,7 +37,7 @@ const Details = () => {
             <TextButton>DOAR</TextButton>
           </DonateButton>
           <ImageContent>
-            <CaseImage source={Negoney} />
+            <CaseImage source={Dog} />
           </ImageContent>
           <CountImages>Qtnd. Imagens</CountImages>
         </ContentBox>
