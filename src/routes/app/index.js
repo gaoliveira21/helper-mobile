@@ -4,7 +4,7 @@ import AuthRoutes from './auth';
 import AppRoutes from './app';
 
 const Routes = () => {
-  const signed = true;
+  const signed = false;
 
   return signed ? <AppRoutes /> : <AuthRoutes />;
 };

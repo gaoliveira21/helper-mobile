@@ -14,11 +14,6 @@ export const Title = styled.Text`
   font-weight: bold;
 `;
 
-export const Form = styled.View`
-  width: 100%;
-  margin-top: 36px;
-`;
-
 export const SubmitButton = styled(RectButton)`
   background: #ff6b6c;
   align-items: center;
