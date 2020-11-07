@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
 
-export const Form = styled.View`
+export const FormBlock = styled.View`
   padding: 24px;
   flex: 1;
 `;
@@ -31,4 +31,20 @@ export const Divider = styled.View`
   background-color: #dfe4ea;
 
   margin-bottom: 24px;
+`;
+
+export const SignOut = styled.View`
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+`;
+
+export const SignOutText = styled.Text`
+  color: #ff6b6c;
+  font-weight: bold;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  margin-right: 10px;
 `;

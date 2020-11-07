@@ -39,8 +39,13 @@ const AuthProvider = ({ children }) => {
     }
   }
 
+  async function signOut() {
+    await AsyncStorage.multiRemove(['@helper:token', '@helper:user']);
+    setUser(null);
+  }
+
   return (
-    <AuthContext.Provider value={{ signed: !!user, user, signIn }}>
+    <AuthContext.Provider value={{ signed: !!user, user, signIn, signOut }}>
       {children}
     </AuthContext.Provider>
   );
