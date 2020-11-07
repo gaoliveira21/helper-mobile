@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect, useContext, createContext } from 'react';
+import { Alert } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 
 import api from '../services/api';
@@ -34,7 +35,7 @@ const AuthProvider = ({ children }) => {
       await AsyncStorage.setItem('@helper:user', JSON.stringify(donator));
       setUser(donator);
     } catch (error) {
-      console.error(error);
+      Alert.alert('Falha na autenticação!', 'verifique seus dados');
     }
   }
 
