@@ -10,6 +10,8 @@ import {
 } from '@expo-google-fonts/roboto';
 import { Montserrat_700Bold } from '@expo-google-fonts/montserrat';
 
+import './src/config/reactotron';
+
 import AppProvider from './src/hooks/app';
 import AuthProvider from './src/hooks/auth';
 import Routes from './src/routes';

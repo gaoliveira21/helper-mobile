@@ -32,8 +32,6 @@ const AuthProvider = ({ children }) => {
 
       await AsyncStorage.setItem('@helper:token', token);
       await AsyncStorage.setItem('@helper:user', JSON.stringify(donator));
-
-      console.log(token, donator);
       setUser(donator);
     } catch (error) {
       console.error(error);
