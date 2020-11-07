@@ -11,6 +11,7 @@ import {
 import { Montserrat_700Bold } from '@expo-google-fonts/montserrat';
 
 import AppProvider from './src/hooks/app';
+import AuthProvider from './src/hooks/auth';
 import Routes from './src/routes';
 
 import {
@@ -53,8 +54,10 @@ export default function App() {
   }
   return (
     <AppProvider>
-      <Routes />
-      <StatusBar style="auto" />
+      <AuthProvider>
+        <Routes />
+        <StatusBar style="auto" />
+      </AuthProvider>
     </AppProvider>
   );
 }

@@ -4,6 +4,8 @@ import { useNavigation } from '@react-navigation/native';
 import { MaterialIcons } from '@expo/vector-icons';
 import * as Yup from 'yup';
 
+import { useAuth } from '../../../../hooks/auth';
+
 import Input from '../../../../components/Input';
 
 import {
@@ -19,6 +21,7 @@ import {
 const SignIn = () => {
   const formRef = useRef(null);
   const navigation = useNavigation();
+  const auth = useAuth();
 
   async function handleSubmit(data) {
     try {
@@ -36,6 +39,8 @@ const SignIn = () => {
       await schema.validate(data, {
         abortEarly: false,
       });
+
+      await auth.signIn(data);
     } catch (err) {
       const validationErrors = {};
       if (err instanceof Yup.ValidationError) {
