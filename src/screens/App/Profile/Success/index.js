@@ -9,7 +9,7 @@ const Success = () => {
 
   return (
     <Container>
-      <Title>Cadastro realizado com sucessso!</Title>
+      <Title>Operação realizada com sucessso!</Title>
       <Feather name="check-circle" size={156} color="#6FCF97" />
       <AccessButton onPress={() => navigation.navigate('Profile')}>
         <AccessButtonText>Voltar ao perfil</AccessButtonText>

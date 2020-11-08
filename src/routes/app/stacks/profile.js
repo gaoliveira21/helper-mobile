@@ -77,7 +77,19 @@ const ProfileRoutes = ({ navigation, route }) => {
         })}
       />
 
-      <Stack.Screen name="NewCreditCard" component={NewCreditCard} />
+      <Stack.Screen
+        name="NewCreditCard"
+        component={NewCreditCard}
+        options={({ navigation }) => ({
+          title: 'Cadastrar cartão',
+          headerTitleAlign: 'center',
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.navigate('CreditCard')}>
+              <Entypo name="chevron-left" size={28} color="#FF6B6C" />
+            </TouchableOpacity>
+          ),
+        })}
+      />
 
       <Stack.Screen
         name="Success"
