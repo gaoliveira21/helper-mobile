@@ -1,9 +1,9 @@
-import React from 'react';
-import { useNavigation } from '@react-navigation/native';
+import React, { useState, useEffect } from 'react';
+import { useRoute } from '@react-navigation/native';
 import { TouchableOpacity, ScrollView, View, FlatList } from 'react-native';
-import { BaseButton, BorderlessButton } from 'react-native-gesture-handler';
 
-import { MaterialIcons } from '@expo/vector-icons';
+import api from '../../../../services/api';
+import { formatDate } from '../../../../utils/format';
 
 import {
   Container,
@@ -21,8 +21,6 @@ import {
   CaseTitle,
   CaseEntity,
   CaseDescription,
-  ConfirmButton,
-  TextButton,
 } from './styles';
 
 import Progress from '../../../../components/Progress';
@@ -30,7 +28,18 @@ import Progress from '../../../../components/Progress';
 import Mestre from '../../../../assets/mestre.png';
 
 const Details = () => {
-  const slideList = [1, 2, 3];
+  const [entity, setEntity] = useState({});
+  const { params } = useRoute();
+
+  useEffect(() => {
+    async function loadEntity() {
+      const response = await api.get(`/entities/${params.id}`);
+
+      setEntity(response.data);
+    }
+
+    loadEntity();
+  }, [params]);
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -44,25 +53,25 @@ const Details = () => {
         <ContentBox>
           <Title>Descrição</Title>
           <DividerTitle />
-          <Description>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-            volutpat laoreet blandit. Maecenas vitae rutrum lectus.Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Aliquam volutpat
-            laoreet blandit. Maecenas vitae rutrum lectus.
-          </Description>
+          <Description>{entity.profile?.description}</Description>
         </ContentBox>
 
         <ContentBox>
           <Title>Localização</Title>
           <DividerTitle />
-          <Description>Rua Victorio Osti, 180</Description>
-          <Description>Vila Correa, Barra Bonita - SP</Description>
+          <Description>
+            {entity.profile?.street}, {entity.profile?.number}
+          </Description>
+          <Description>
+            {entity.profile?.neighborhood}, {entity.profile?.city} -{' '}
+            {entity.profile?.state}
+          </Description>
         </ContentBox>
 
         <ContentBox>
           <Title>Whatsapp</Title>
           <DividerTitle />
-          <Description>14 998765432</Description>
+          <Description>{entity.profile?.whatsapp}</Description>
         </ContentBox>
 
         <ContentBox>
@@ -72,26 +81,26 @@ const Details = () => {
               <DividerTitle />
             </View>
             <CountCases>
-              <TextWhite>{slideList.length}</TextWhite>
+              <TextWhite>{entity.cases?.length}</TextWhite>
             </CountCases>
           </RowContent>
 
           <FlatList
-            data={slideList}
+            data={entity.cases}
+            keyExtractor={(caseItem) => String(caseItem.id)}
             horizontal
-            renderItem={() => {
+            renderItem={({ item }) => {
               return (
                 <TouchableOpacity>
                   <Case>
-                    <CaseDate>04/11/2020</CaseDate>
-                    <CaseTitle>Título do caso</CaseTitle>
-                    <CaseEntity>Por nome da entidade</CaseEntity>
-                    <CaseDescription>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Aliquam volutpat laoreet blandit. Maecenas vitae rutrum
-                      lectus.
-                    </CaseDescription>
-                    <Progress value={400} valueCollected={120} />
+                    <CaseDate>{formatDate(item.createdAt)}</CaseDate>
+                    <CaseTitle>{item.title}</CaseTitle>
+                    <CaseEntity>{entity.name}</CaseEntity>
+                    <CaseDescription>{item.description}</CaseDescription>
+                    <Progress
+                      value={item.value}
+                      valueCollected={item.value_collected}
+                    />
                   </Case>
                 </TouchableOpacity>
               );

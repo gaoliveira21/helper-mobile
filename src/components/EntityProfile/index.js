@@ -16,7 +16,7 @@ import {
 
 import Dog from '../../assets/dog.jpg';
 
-const EntityProfile = ({ imageEntity, name, initials, description }) => {
+const EntityProfile = ({ imageEntity, name, initials, description, id }) => {
   const navigation = useNavigation();
 
   return (
@@ -29,7 +29,7 @@ const EntityProfile = ({ imageEntity, name, initials, description }) => {
         <Initials>{initials}</Initials>
         <Description>{description}</Description>
       </Container>
-      <ProfileButton onPress={() => navigation.navigate('Details')}>
+      <ProfileButton onPress={() => navigation.navigate('Details', { id })}>
         <TextButton>Ver Perfil</TextButton>
       </ProfileButton>
     </Card>
@@ -41,6 +41,7 @@ EntityProfile.propTypes = {
   name: PropTypes.string.isRequired,
   initials: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 EntityProfile.defaultProps = {
