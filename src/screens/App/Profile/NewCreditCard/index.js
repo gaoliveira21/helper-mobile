@@ -2,9 +2,11 @@ import React, { useRef } from 'react';
 import { ScrollView } from 'react-native';
 import { Form } from '@unform/mobile';
 import { useNavigation } from '@react-navigation/native';
-
+import * as Yup from 'yup';
 import { MaterialIcons } from '@expo/vector-icons';
 
+import api from '../../../../services/api';
+import errors from '../../../../utils/errors';
 import Input from '../../../../components/Input';
 
 import { Container, FormBlock, Button, TextButton } from './styles';
@@ -13,10 +15,40 @@ const ChangePassword = () => {
   const formRef = useRef(null);
   const navigation = useNavigation();
 
+  async function handleSubmit(data) {
+    try {
+      const schema = Yup.object().shape({
+        nickname: Yup.string().required(
+          'O campo Apelido do cartão é obrigatório'
+        ),
+        number: Yup.string()
+          .matches(/^\d{16}$/g, 'Número do cartão inválido')
+          .required('O campo Número do cartão é obrigatório'),
+        cvv: Yup.string()
+          .matches(/^\d{3}$/g, 'CVV inválido')
+          .required('O campo CVV é obrigatório'),
+        cpf: Yup.string()
+          .matches(/^\d{11}$/g, 'CPF inválido')
+          .required('O campo CPF é obrigatório'),
+        expiration_date: Yup.string()
+          .matches(/^\d{2}\/\d{2}$/g, 'Data de validade inválida')
+          .required('O campo Data de validade é obrigatório'),
+      });
+
+      await schema.validate(data, { abortEarly: false });
+
+      await api.post('/donators/cards', data);
+
+      navigation.navigate('Success');
+    } catch (err) {
+      errors(err, formRef);
+    }
+  }
+
   return (
     <ScrollView>
       <Container>
-        <Form ref={formRef}>
+        <Form ref={formRef} onSubmit={handleSubmit}>
           <FormBlock>
             <Input
               label="Apelido do cartão"
@@ -61,7 +93,7 @@ const ChangePassword = () => {
 
             <Button
               color="#FF6B6C"
-              onPress={() => navigation.navigate('Success')}
+              onPress={() => formRef.current.submitForm()}
             >
               <MaterialIcons name="check" color="#FFF" size={24} />
               <TextButton>Cadastrar cartão</TextButton>
