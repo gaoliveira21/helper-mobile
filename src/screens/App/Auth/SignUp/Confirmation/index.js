@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { ScrollView } from 'react-native';
 import { Form } from '@unform/mobile';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { MaterialIcons } from '@expo/vector-icons';
 import * as Yup from 'yup';
 
@@ -21,6 +21,7 @@ import errors from '../../../../../utils/errors';
 const Confirmation = () => {
   const formRef = useRef(null);
   const navigation = useNavigation();
+  const route = useRoute();
   const auth = useAuth();
 
   async function handleSubmit(data) {
@@ -59,7 +60,11 @@ const Confirmation = () => {
   return (
     <Container>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Form ref={formRef} onSubmit={handleSubmit}>
+        <Form
+          ref={formRef}
+          onSubmit={handleSubmit}
+          initialData={{ ...route.params }}
+        >
           <FormBlock>
             <Avatar image="" />
             <Input
