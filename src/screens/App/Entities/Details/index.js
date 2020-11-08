@@ -80,7 +80,7 @@ const Details = () => {
               <DividerTitle />
             </View>
             <CountCases>
-              <TextWhite>{entity.cases.length}</TextWhite>
+              <TextWhite>{entity.cases?.length}</TextWhite>
             </CountCases>
           </RowContent>
 
