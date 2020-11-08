@@ -9,7 +9,7 @@ export const Container = styled.View`
   background: #f9f9f9;
 `;
 
-export const Form = styled.View`
+export const FormBlock = styled.View`
   width: 100%;
 `;
 

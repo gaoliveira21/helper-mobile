@@ -3,7 +3,9 @@ import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Form } from '@unform/mobile';
 import { MaterialIcons } from '@expo/vector-icons';
+import * as Yup from 'yup';
 
+import errors from '../../../../../utils/errors';
 import Input from '../../../../../components/Input';
 
 import {
@@ -21,8 +23,29 @@ const Step1 = () => {
   const formRef = useRef(null);
   const navigation = useNavigation();
 
-  function handleSubmit(data) {
-    console.tron.log(data);
+  async function handleSubmit(data) {
+    try {
+      formRef.current.setErrors({});
+      const schema = Yup.object().shape({
+        full_name: Yup.string().required('O campo Nome completo é obrigatório'),
+        email: Yup.string()
+          .email('O campo email precisa ser um email válido')
+          .required('O campo email é obrigatório'),
+
+        password: Yup.string()
+          .min(6, 'O campo senha precisa ter ao menos 6 caracteres')
+          .required('O campo senha é obrigatório'),
+      });
+
+      await schema.validate(data, {
+        abortEarly: false,
+      });
+
+      const { full_name, email, password } = data;
+      navigation.navigate('SignUpStep2', { full_name, email, password });
+    } catch (err) {
+      errors(err, formRef);
+    }
   }
 
   return (
@@ -47,6 +70,8 @@ const Step1 = () => {
               <MaterialIcons name="email" size={24} color={color} />
             )}
             name="email"
+            autoCapitalize="none"
+            autoCorrect={false}
           />
 
           <Input
@@ -59,7 +84,7 @@ const Step1 = () => {
             name="password"
           />
 
-          <NextButton onPress={() => navigation.navigate('SignUpStep2')}>
+          <NextButton onPress={() => formRef.current.submitForm()}>
             <NextButtonText>Próximo</NextButtonText>
           </NextButton>
         </FormBlock>

@@ -22,7 +22,7 @@ export const Description = styled.Text`
   color: #999999;
 `;
 
-export const Form = styled.View`
+export const FormBlock = styled.View`
   width: 100%;
 `;
 
