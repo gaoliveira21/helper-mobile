@@ -77,6 +77,17 @@ const AuthProvider = ({ children }) => {
     }
   }
 
+  async function changePassword(data) {
+    try {
+      await api.put('/donators', data);
+    } catch (error) {
+      Alert.alert(
+        'Falha na alteração da senha!',
+        'verifique os dados enviados'
+      );
+    }
+  }
+
   async function signOut() {
     await AsyncStorage.multiRemove(['@helper:token', '@helper:user']);
     setUser(null);
@@ -91,6 +102,7 @@ const AuthProvider = ({ children }) => {
         signUp,
         finishSignUp,
         updateProfile,
+        changePassword,
         signOut,
       }}
     >
