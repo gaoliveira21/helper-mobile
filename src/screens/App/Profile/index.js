@@ -1,8 +1,9 @@
 import React, { useRef } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { Form } from '@unform/mobile';
-import { ScrollView } from 'react-native';
+import { Alert, ScrollView } from 'react-native';
 import { MaterialIcons, SimpleLineIcons } from '@expo/vector-icons';
+import * as Yup from 'yup';
 
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Header from '../../../components/Header';
@@ -19,11 +20,40 @@ import {
   SignOut,
   SignOutText,
 } from './styles';
+import errors from '../../../utils/errors';
 
 const Profile = () => {
   const formRef = useRef();
   const navigation = useNavigation();
   const auth = useAuth();
+
+  async function handleSubmit(data) {
+    try {
+      formRef.current.setErrors({});
+
+      const schema = Yup.object().shape({
+        full_name: Yup.string().required('O campo Nome completo é obrigatório'),
+        email: Yup.string()
+          .email('O campo email precisa ser um email válido')
+          .required('O campo email é obrigatório'),
+        phone: Yup.string()
+          .required('O campo Telefone é obrigatório')
+          .matches(/^\d{11}$/g, 'Telefone informado é inválido'),
+        city: Yup.string().required('O campo Cidade é obrigatório'),
+        state: Yup.string()
+          .length(2, 'O campo estado precisa ter 2 caracteres')
+          .required('O campo estado é obrigatório'),
+      });
+
+      await schema.validate(data, { abortEarly: false });
+
+      await auth.updateProfile(data);
+
+      Alert.alert('Perfil alterado com sucesso!');
+    } catch (err) {
+      errors(err, formRef);
+    }
+  }
 
   return (
     <>
@@ -33,7 +63,11 @@ const Profile = () => {
       />
 
       <ScrollView>
-        <Form ref={formRef}>
+        <Form
+          ref={formRef}
+          onSubmit={handleSubmit}
+          initialData={{ ...auth.user }}
+        >
           <FormBlock>
             <Avatar image="" />
             <Input
@@ -76,7 +110,10 @@ const Profile = () => {
               )}
               name="state"
             />
-            <Button color="#6FCF97">
+            <Button
+              color="#6FCF97"
+              onPress={() => formRef.current.submitForm()}
+            >
               <MaterialIcons name="person" color="#FFF" size={24} />
               <TextButton>Atualizar Perfil</TextButton>
             </Button>

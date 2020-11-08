@@ -50,7 +50,7 @@ const AuthProvider = ({ children }) => {
       await AsyncStorage.setItem('@helper:token', token);
       await AsyncStorage.setItem('@helper:pre:user', JSON.stringify(donator));
     } catch (error) {
-      Alert.alert('Falha na autenticação!', 'verifique seus dados');
+      Alert.alert('Falha no cadastro!', 'verifique seus dados');
     }
   }
 
@@ -63,6 +63,20 @@ const AuthProvider = ({ children }) => {
     setUser(userStoraged);
   }
 
+  async function updateProfile(data) {
+    try {
+      await api.put('/donators', data);
+
+      await AsyncStorage.setItem(
+        '@helper:user',
+        JSON.stringify({ ...user, ...data })
+      );
+      setUser({ ...user, ...data });
+    } catch (error) {
+      Alert.alert('Falha na alteração do perfil!', 'verifique seus dados');
+    }
+  }
+
   async function signOut() {
     await AsyncStorage.multiRemove(['@helper:token', '@helper:user']);
     setUser(null);
@@ -70,7 +84,15 @@ const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ signed: !!user, user, signIn, signUp, finishSignUp, signOut }}
+      value={{
+        signed: !!user,
+        user,
+        signIn,
+        signUp,
+        finishSignUp,
+        updateProfile,
+        signOut,
+      }}
     >
       {children}
     </AuthContext.Provider>

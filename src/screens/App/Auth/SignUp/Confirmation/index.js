@@ -27,6 +27,7 @@ const Confirmation = () => {
   async function handleSubmit(data) {
     try {
       formRef.current.setErrors({});
+
       const schema = Yup.object().shape({
         full_name: Yup.string().required('O campo Nome completo é obrigatório'),
         email: Yup.string()
