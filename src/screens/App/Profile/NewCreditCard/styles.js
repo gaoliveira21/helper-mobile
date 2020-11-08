@@ -2,7 +2,12 @@ import styled from 'styled-components/native';
 
 import { RectButton } from 'react-native-gesture-handler';
 
-export const Form = styled.View`
+export const Container = styled.View`
+  background: #f9f9f9;
+  flex: 1;
+`;
+
+export const FormBlock = styled.View`
   padding: 48px 24px;
   flex: 1;
 `;
