@@ -3,6 +3,7 @@ import { useRoute } from '@react-navigation/native';
 import { TouchableOpacity, ScrollView, View, FlatList } from 'react-native';
 
 import api from '../../../../services/api';
+import { formatDate } from '../../../../utils/format';
 
 import {
   Container,
@@ -92,7 +93,7 @@ const Details = () => {
               return (
                 <TouchableOpacity>
                   <Case>
-                    <CaseDate>04/11/2020</CaseDate>
+                    <CaseDate>{formatDate(item.createdAt)}</CaseDate>
                     <CaseTitle>{item.title}</CaseTitle>
                     <CaseEntity>{entity.name}</CaseEntity>
                     <CaseDescription>{item.description}</CaseDescription>
