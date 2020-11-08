@@ -20,8 +20,10 @@ import {
 } from './styles';
 
 import WelcomeImg from '../../../assets/welcome.png';
+import { useApp } from '../../../hooks/app';
 
 const Welcome = () => {
+  const { presentationDone } = useApp();
   const navigation = useNavigation();
 
   return (
@@ -31,7 +33,7 @@ const Welcome = () => {
       <Title>Seja bem-vindo ao Helper</Title>
       <Description>Sua plataforma de doações online.</Description>
       <RowButtons>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => presentationDone()}>
           <JumpText>Pular</JumpText>
         </TouchableOpacity>
         <NextButton onPress={() => navigation.navigate('Donations')}>
