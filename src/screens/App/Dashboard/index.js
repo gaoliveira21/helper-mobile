@@ -44,7 +44,7 @@ const Dashboard = () => {
           <FontAwesome5 name="coins" size={64} color="#FFF" />
           <View>
             <SmallText>Total doado</SmallText>
-            <LargeBoldText>{formattedDonationAmount}</LargeBoldText>
+            <LargeBoldText>R${formattedDonationAmount}</LargeBoldText>
           </View>
         </TotalDonations>
       </Container>

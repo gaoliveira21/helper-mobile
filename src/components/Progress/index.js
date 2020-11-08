@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
+
+import { formatPrice } from '../../utils/format';
 
 import { ProgressBar, CurrentProgress, Value, ValueCollected } from './styles';
 
 const Progress = ({ value, valueCollected }) => {
+  const formattedValue = useMemo(() => formatPrice(value), [value]);
+  const formattedValueCollected = useMemo(() => formatPrice(valueCollected), [
+    valueCollected,
+  ]);
+
   return (
     <ProgressBar>
-      <Value>R$ {value}</Value>
+      <Value>R$ {formattedValue}</Value>
       <CurrentProgress>
-        <ValueCollected>R$ {valueCollected}</ValueCollected>
+        <ValueCollected>R$ {formattedValueCollected}</ValueCollected>
       </CurrentProgress>
     </ProgressBar>
   );
