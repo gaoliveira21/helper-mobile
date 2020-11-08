@@ -39,13 +39,39 @@ const AuthProvider = ({ children }) => {
     }
   }
 
+  async function signUp(data) {
+    try {
+      const response = await api.post('/donators', data);
+
+      const { token, donator } = response.data;
+
+      api.defaults.headers.Authorization = `Bearer ${token}`;
+
+      await AsyncStorage.setItem('@helper:token', token);
+      await AsyncStorage.setItem('@helper:pre:user', JSON.stringify(donator));
+    } catch (error) {
+      Alert.alert('Falha na autenticação!', 'verifique seus dados');
+    }
+  }
+
+  async function finishSignUp() {
+    const userStoraged = JSON.parse(
+      await AsyncStorage.getItem('@helper:pre:user')
+    );
+    await AsyncStorage.removeItem('@helper:pre:user');
+    await AsyncStorage.setItem('@helper:user', JSON.stringify(userStoraged));
+    setUser(userStoraged);
+  }
+
   async function signOut() {
     await AsyncStorage.multiRemove(['@helper:token', '@helper:user']);
     setUser(null);
   }
 
   return (
-    <AuthContext.Provider value={{ signed: !!user, user, signIn, signOut }}>
+    <AuthContext.Provider
+      value={{ signed: !!user, user, signIn, signUp, finishSignUp, signOut }}
+    >
       {children}
     </AuthContext.Provider>
   );

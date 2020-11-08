@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { MaterialIcons } from '@expo/vector-icons';
 import * as Yup from 'yup';
 
+import errors from '../../../../utils/errors';
 import { useAuth } from '../../../../hooks/auth';
 
 import Input from '../../../../components/Input';
@@ -42,14 +43,7 @@ const SignIn = () => {
 
       await auth.signIn(data);
     } catch (err) {
-      const validationErrors = {};
-      if (err instanceof Yup.ValidationError) {
-        err.inner.forEach((error) => {
-          validationErrors[error.path] = error.message;
-        });
-
-        formRef.current.setErrors(validationErrors);
-      }
+      errors(err, formRef);
     }
   }
 
