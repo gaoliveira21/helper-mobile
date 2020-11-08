@@ -43,6 +43,7 @@ const Entities = () => {
               name={item.entity.name}
               initials={item.initials}
               description={item.description}
+              id={item.entity.id}
             />
           )}
         />
