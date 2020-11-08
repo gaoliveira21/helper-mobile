@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 import api from '../../../services/api';
+import { formatPrice } from '../../../utils/format';
 import { useAuth } from '../../../hooks/auth';
 
 import {
@@ -18,9 +19,10 @@ const Dashboard = () => {
   const [dashboard, setDashboard] = useState({});
   const auth = useAuth();
 
-  const formattedDonationAmount = useMemo(() => dashboard.donationAmount, [
-    dashboard,
-  ]);
+  const formattedDonationAmount = useMemo(
+    () => formatPrice(dashboard.donationAmount),
+    [dashboard]
+  );
 
   useEffect(() => {
     async function loadDashboard() {
