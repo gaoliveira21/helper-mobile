@@ -43,7 +43,9 @@ const CreditCard = () => {
             <MaterialIcons name="credit-card" size={36} color="#5B5F97" />
             <TextContent>
               <NameCard>{item.nickname}</NameCard>
-              <NumberCard>{item.number}</NumberCard>
+              <NumberCard>
+                {item.number.replace(/\d{12}/g, '************')}
+              </NumberCard>
             </TextContent>
           </CreditCardBox>
         )}
