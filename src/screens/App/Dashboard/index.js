@@ -1,8 +1,9 @@
-import React from 'react';
-
+import React, { useEffect, useMemo, useState } from 'react';
 import { View } from 'react-native';
-
 import { FontAwesome5 } from '@expo/vector-icons';
+
+import api from '../../../services/api';
+import { useAuth } from '../../../hooks/auth';
 
 import {
   Container,
@@ -14,18 +15,34 @@ import {
 } from './styles';
 
 const Dashboard = () => {
+  const [dashboard, setDashboard] = useState({});
+  const auth = useAuth();
+
+  const formattedDonationAmount = useMemo(() => dashboard.donationAmount, [
+    dashboard,
+  ]);
+
+  useEffect(() => {
+    async function loadDashboard() {
+      const response = await api.get('/donators/dashboard');
+      setDashboard(response.data);
+    }
+
+    loadDashboard();
+  }, []);
+
   return (
     <>
       <Header>
         <SmallText>Bem-vindo,</SmallText>
-        <MediumText>Pedro Lucas José de Oliveira</MediumText>
+        <MediumText>{auth.user.full_name}</MediumText>
       </Header>
       <Container>
         <TotalDonations>
           <FontAwesome5 name="coins" size={64} color="#FFF" />
           <View>
             <SmallText>Total doado</SmallText>
-            <LargeBoldText>R$ 354,00</LargeBoldText>
+            <LargeBoldText>{formattedDonationAmount}</LargeBoldText>
           </View>
         </TotalDonations>
       </Container>
