@@ -55,8 +55,8 @@ CaseItem.propTypes = {
   title: PropTypes.string.isRequired,
   entity: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  caseValue: PropTypes.string.isRequired,
-  caseValueCollected: PropTypes.string.isRequired,
+  caseValue: PropTypes.number.isRequired,
+  caseValueCollected: PropTypes.number.isRequired,
 };
 
 export default CaseItem;
