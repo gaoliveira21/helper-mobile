@@ -8,6 +8,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Entity from '../../../screens/App/Entities';
 import Details from '../../../screens/App/Entities/Details';
+import CaseDetails from '../../../screens/App/Cases/Details';
 
 const Stack = createStackNavigator();
 
@@ -53,6 +54,19 @@ const EntitiesRoutes = ({ navigation, route }) => {
           headerTitleAlign: 'center',
           headerLeft: () => (
             <TouchableOpacity onPress={() => navigation.navigate('Entity')}>
+              <Entypo name="chevron-left" size={28} color="#FF6B6C" />
+            </TouchableOpacity>
+          ),
+        })}
+      />
+      <Stack.Screen
+        name="CaseDetails"
+        component={CaseDetails}
+        options={({ navigation }) => ({
+          title: 'Detalhes do caso',
+          headerTitleAlign: 'center',
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.navigate('Details')}>
               <Entypo name="chevron-left" size={28} color="#FF6B6C" />
             </TouchableOpacity>
           ),

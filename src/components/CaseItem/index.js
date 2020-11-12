@@ -41,7 +41,7 @@ const CaseItem = ({
       <Container>
         <Date>{formattedDate}</Date>
         <Title>{title}</Title>
-        <Entity>{entity}</Entity>
+        <Entity>Por: {entity}</Entity>
         <Description>{description}</Description>
         <Progress value={caseValue} valueCollected={caseValueCollected} />
       </Container>

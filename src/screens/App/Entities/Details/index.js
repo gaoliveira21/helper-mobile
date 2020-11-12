@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useRoute } from '@react-navigation/native';
+import { useRoute, useNavigation } from '@react-navigation/native';
 import { TouchableOpacity, ScrollView, View, FlatList } from 'react-native';
 
 import api from '../../../../services/api';
@@ -30,6 +30,7 @@ import Mestre from '../../../../assets/mestre.png';
 const Details = () => {
   const [entity, setEntity] = useState({});
   const { params } = useRoute();
+  const navigation = useNavigation();
 
   useEffect(() => {
     async function loadEntity() {
@@ -91,7 +92,11 @@ const Details = () => {
             horizontal
             renderItem={({ item }) => {
               return (
-                <TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() =>
+                    navigation.navigate('CaseDetails', { id: params.id })
+                  }
+                >
                   <Case>
                     <CaseDate>{formatDate(item.createdAt)}</CaseDate>
                     <CaseTitle>{item.title}</CaseTitle>
