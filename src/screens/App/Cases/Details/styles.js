@@ -5,6 +5,7 @@ import { RectButton } from 'react-native-gesture-handler';
 export const Container = styled.View`
   padding: 24px 24px;
   flex: 1;
+  background: #f9f9f9;
 `;
 
 export const ContentBox = styled.View`
@@ -47,11 +48,12 @@ export const TextButton = styled.Text`
 export const ImageContent = styled.View`
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 300px;
   height: 220px;
   border-radius: 8px;
   overflow: hidden;
   position: relative;
+  margin-right: 5px;
 `;
 
 export const CaseImage = styled(Image)`

@@ -22,6 +22,7 @@ import Progress from '../Progress';
 import Negoney from '../../assets/dog.jpg';
 
 const CaseItem = ({
+  id,
   caseDate,
   title,
   entity,
@@ -45,7 +46,7 @@ const CaseItem = ({
         <Progress value={caseValue} valueCollected={caseValueCollected} />
       </Container>
 
-      <DonateButton onPress={() => navigation.navigate('Details')}>
+      <DonateButton onPress={() => navigation.navigate('Details', { id })}>
         <TextButton>DOAR</TextButton>
       </DonateButton>
     </Card>
@@ -53,6 +54,7 @@ const CaseItem = ({
 };
 
 CaseItem.propTypes = {
+  id: PropTypes.number.isRequired,
   caseDate: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   entity: PropTypes.string.isRequired,

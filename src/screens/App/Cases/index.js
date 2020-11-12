@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ScrollView } from 'react-native';
+import { FlatList } from 'react-native';
 import { Container } from './styles';
 
 import { useAuth } from '../../../hooks/auth';
@@ -27,26 +27,31 @@ const Cases = () => {
   }, [user]);
 
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
+    <>
       <Header
         title="Casos"
         description="Doe para algum caso e torne o dia de alguém mais feliz"
       />
       <Container>
-        {cases.map((c) => (
-          <CaseItem
-            key={c.id}
-            imageCase=""
-            caseDate={c.createdAt}
-            title={c.title}
-            entity={c.owner.name}
-            description={c.description}
-            caseValue={c.value}
-            caseValueCollected={c.value_collected}
-          />
-        ))}
+        <FlatList
+          data={cases}
+          keyExtractor={(c) => String(c.id)}
+          renderItem={({ item }) => (
+            <CaseItem
+              key={item.id}
+              id={item.id}
+              imageCase=""
+              caseDate={item.createdAt}
+              title={item.title}
+              entity={item.owner.name}
+              description={item.description}
+              caseValue={item.value}
+              caseValueCollected={item.value_collected}
+            />
+          )}
+        />
       </Container>
-    </ScrollView>
+    </>
   );
 };
 
