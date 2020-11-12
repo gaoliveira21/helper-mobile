@@ -1,7 +1,8 @@
-import React from 'react';
-import { View } from 'react-native';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigation } from '@react-navigation/native';
+
+import { formatDate } from '../../utils/format';
 
 import {
   Card,
@@ -29,6 +30,7 @@ const CaseItem = ({
   caseValueCollected,
 }) => {
   const navigation = useNavigation();
+  const formattedDate = useMemo(() => formatDate(caseDate), [caseDate]);
 
   return (
     <Card>
@@ -36,7 +38,7 @@ const CaseItem = ({
         <CaseImage source={Negoney} />
       </ImageContent>
       <Container>
-        <Date>{caseDate}</Date>
+        <Date>{formattedDate}</Date>
         <Title>{title}</Title>
         <Entity>{entity}</Entity>
         <Description>{description}</Description>
