@@ -26,6 +26,7 @@ const Step2 = () => {
 
         state: Yup.string()
           .length(2, 'O campo estado precisa ter 2 caracteres')
+          .matches(/^[A-Z]{2}$/g, 'UF precisa ser maiúsculo')
           .required('O campo estado é obrigatório'),
       });
 
