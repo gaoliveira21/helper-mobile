@@ -17,6 +17,7 @@ export const ImageContent = styled.View`
   border-radius: 180px;
   overflow: hidden;
   position: relative;
+  background-color: #ff6b6c;
 `;
 
 export const ProfileImage = styled(Image)`

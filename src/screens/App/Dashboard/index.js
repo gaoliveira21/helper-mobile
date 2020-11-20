@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { View } from 'react-native';
-import { FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome5, MaterialIcons } from '@expo/vector-icons';
 
 import api from '../../../services/api';
 import { formatPrice } from '../../../utils/format';
@@ -9,11 +9,16 @@ import { useAuth } from '../../../hooks/auth';
 import {
   Container,
   Header,
+  ImageContent,
+  ProfileImage,
   TotalDonations,
   SmallText,
   MediumText,
-  LargeBoldText,
+  Total,
+  Value,
 } from './styles';
+
+import Mestre from '../../../assets/mestre.png';
 
 const Dashboard = () => {
   const [dashboard, setDashboard] = useState({});
@@ -36,15 +41,22 @@ const Dashboard = () => {
   return (
     <>
       <Header>
-        <SmallText>Bem-vindo,</SmallText>
+        <ImageContent>
+          {/*
+            Validar se tiver imagem
+            {<ProfileImage source={Mestre} />}
+          */}
+          <MaterialIcons name="person" size={48} color="#fff" />
+        </ImageContent>
+        <SmallText>Bem-vindo</SmallText>
         <MediumText>{auth.user.full_name}</MediumText>
       </Header>
       <Container>
         <TotalDonations>
-          <FontAwesome5 name="coins" size={64} color="#FFF" />
+          <FontAwesome5 name="coins" size={64} color="#ff6b6c" />
           <View>
-            <SmallText>Total doado</SmallText>
-            <LargeBoldText>R${formattedDonationAmount}</LargeBoldText>
+            <Total>Total doado</Total>
+            <Value>R$ {formattedDonationAmount}</Value>
           </View>
         </TotalDonations>
       </Container>
