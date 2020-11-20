@@ -19,8 +19,6 @@ import {
 
 import Progress from '../Progress';
 
-import Negoney from '../../assets/dog.jpg';
-
 const CaseItem = ({
   id,
   caseDate,
@@ -29,15 +27,18 @@ const CaseItem = ({
   description,
   caseValue,
   caseValueCollected,
+  imageCase,
 }) => {
   const navigation = useNavigation();
   const formattedDate = useMemo(() => formatDate(caseDate), [caseDate]);
 
   return (
     <Card>
-      <ImageContent>
-        <CaseImage source={Negoney} />
-      </ImageContent>
+      {imageCase ? (
+        <ImageContent>
+          <CaseImage source={{ uri: imageCase }} />
+        </ImageContent>
+      ) : null}
       <Container>
         <Date>{formattedDate}</Date>
         <Title>{title}</Title>
@@ -61,6 +62,7 @@ CaseItem.propTypes = {
   description: PropTypes.string.isRequired,
   caseValue: PropTypes.number.isRequired,
   caseValueCollected: PropTypes.number.isRequired,
+  imageCase: PropTypes.string.isRequired,
 };
 
 export default CaseItem;

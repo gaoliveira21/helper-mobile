@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { Form } from '@unform/mobile';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity, ScrollView } from 'react-native';
 
@@ -26,8 +27,12 @@ import Input from '../../../../components/Input';
 
 const Payment = () => {
   const navigation = useNavigation();
-
+  const formRef = useRef(null);
   const [isSelected, setSelection] = useState(false);
+
+  function handleSubmit(data) {
+    console.tron.log(data);
+  }
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -61,16 +66,18 @@ const Payment = () => {
         <Title>Valor da doação</Title>
         <DividerTitle />
 
-        <ContentBox>
-          <Input
-            label="Valor (R$)"
-            placeholder="R$ 0,00"
-            icon={({ color }) => (
-              <MaterialIcons name="person" size={24} color={color} />
-            )}
-            error=""
-          />
-        </ContentBox>
+        <Form ref={formRef} onSubmit={handleSubmit}>
+          <ContentBox>
+            <Input
+              label="Valor (R$)"
+              placeholder="R$ 0,00"
+              icon={({ color }) => (
+                <MaterialIcons name="person" size={24} color={color} />
+              )}
+              name="value"
+            />
+          </ContentBox>
+        </Form>
 
         <CheckAnonymous>
           <Check value={isSelected} onValueChange={setSelection} />
