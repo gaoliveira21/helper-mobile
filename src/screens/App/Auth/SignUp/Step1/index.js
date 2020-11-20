@@ -83,7 +83,6 @@ const Step1 = () => {
             )}
             name="password"
           />
-
           <NextButton onPress={() => formRef.current.submitForm()}>
             <NextButtonText>Próximo</NextButtonText>
           </NextButton>

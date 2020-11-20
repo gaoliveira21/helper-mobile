@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import { Container, Label, InputBlock, Field, Error } from './styles';
 
+import DismissKeyboard from '../DismissKeyboard';
+
 const Input = ({ name, label, icon: Icon, ...rest }) => {
   const [focused, setFocused] = useState(false);
   const inputRef = useRef(null);
@@ -34,25 +36,27 @@ const Input = ({ name, label, icon: Icon, ...rest }) => {
 
   return (
     <Container>
-      <Label>{label}</Label>
-      <InputBlock focused={focused}>
-        <Field
-          ref={inputRef}
-          defaultValue={defaultValue}
-          placeholderTextColor={focused ? '#5B5F97' : '#999999'}
-          keyboardAppearance="dark"
-          onFocus={() => setFocused(true)}
-          onBlur={() => setFocused(false)}
-          onChangeText={(value) => {
-            if (inputRef.current) {
-              inputRef.current.value = value;
-            }
-          }}
-          {...rest}
-        />
-        {Icon && <Icon color={focused ? '#5B5F97' : '#999999'} />}
-      </InputBlock>
-      <Error>{error}</Error>
+      <DismissKeyboard>
+        <Label>{label}</Label>
+        <InputBlock focused={focused}>
+          <Field
+            ref={inputRef}
+            defaultValue={defaultValue}
+            placeholderTextColor={focused ? '#5B5F97' : '#999999'}
+            keyboardAppearance="dark"
+            onFocus={() => setFocused(true)}
+            onBlur={() => setFocused(false)}
+            onChangeText={(value) => {
+              if (inputRef.current) {
+                inputRef.current.value = value;
+              }
+            }}
+            {...rest}
+          />
+          {Icon && <Icon color={focused ? '#5B5F97' : '#999999'} />}
+        </InputBlock>
+        <Error>{error}</Error>
+      </DismissKeyboard>
     </Container>
   );
 };
