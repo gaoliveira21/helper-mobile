@@ -45,7 +45,9 @@ const Details = () => {
         </ContentBox>
 
         <ContentBox>
-          <DonateButton onPress={() => navigation.navigate('Payment')}>
+          <DonateButton
+            onPress={() => navigation.navigate('Payment', { id: caseData?.id })}
+          >
             <TextButton>DOAR</TextButton>
           </DonateButton>
           <FlatList

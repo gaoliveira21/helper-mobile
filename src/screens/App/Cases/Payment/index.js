@@ -1,9 +1,11 @@
 import React, { useState, useRef } from 'react';
 import { Form } from '@unform/mobile';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { TouchableOpacity, ScrollView } from 'react-native';
-
+import * as Yup from 'yup';
 import { MaterialIcons } from '@expo/vector-icons';
+
+import api from '../../../../services/api';
 
 import {
   Container,
@@ -24,14 +26,31 @@ import {
 } from './styles';
 
 import Input from '../../../../components/Input';
+import errors from '../../../../utils/errors';
 
 const Payment = () => {
   const navigation = useNavigation();
+  const { params } = useRoute();
   const formRef = useRef(null);
   const [isSelected, setSelection] = useState(false);
 
-  function handleSubmit(data) {
-    console.tron.log(data);
+  async function handleSubmit(data) {
+    try {
+      formRef.current.setErrors({});
+      const schema = Yup.object().shape({
+        value: Yup.number().positive().required(),
+      });
+      await schema.validate(data, { abortEarly: false });
+
+      await api.post(`/cases/${params.id}/donations`, {
+        value: data.value,
+        is_anonymous: isSelected,
+      });
+
+      navigation.navigate('Success');
+    } catch (err) {
+      errors(err, formRef);
+    }
   }
 
   return (
@@ -84,11 +103,7 @@ const Payment = () => {
           <CheckText>Tornar essa doação anônima</CheckText>
         </CheckAnonymous>
 
-        <ConfirmButton
-          onPress={() => {
-            navigation.navigate('Success');
-          }}
-        >
+        <ConfirmButton onPress={() => formRef.current.submitForm()}>
           <TextButton>Confirmar doação</TextButton>
         </ConfirmButton>
       </Container>
