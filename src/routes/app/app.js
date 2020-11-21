@@ -11,6 +11,10 @@ import ProfileStack from './stacks/profile';
 const Tab = createBottomTabNavigator();
 
 const AppRoutes = () => {
+  const tabBarListeners = ({ navigation, route }) => ({
+    tabPress: () => navigation.navigate(route.name),
+  });
+
   return (
     <Tab.Navigator
       tabBarOptions={{
@@ -74,6 +78,7 @@ const AppRoutes = () => {
       <Tab.Screen
         name="Entities"
         component={EntityStack}
+        listeners={tabBarListeners}
         options={{
           tabBarLabel: 'Entidades',
           tabBarIcon: ({ color, size, focused }) => {

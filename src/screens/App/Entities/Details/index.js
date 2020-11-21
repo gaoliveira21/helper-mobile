@@ -25,8 +25,6 @@ import {
 
 import Progress from '../../../../components/Progress';
 
-import Mestre from '../../../../assets/mestre.png';
-
 const Details = () => {
   const [entity, setEntity] = useState({});
   const { params } = useRoute();
@@ -46,9 +44,11 @@ const Details = () => {
     <ScrollView showsVerticalScrollIndicator={false}>
       <Container>
         <ContentBox>
-          <ImageContent>
-            <ProfileImage source={Mestre} />
-          </ImageContent>
+          {entity.profile?.avatar ? (
+            <ImageContent>
+              <ProfileImage source={{ uri: entity.profile.avatar?.url }} />
+            </ImageContent>
+          ) : null}
         </ContentBox>
 
         <ContentBox>

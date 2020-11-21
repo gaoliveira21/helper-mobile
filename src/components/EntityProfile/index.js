@@ -14,16 +14,16 @@ import {
   TextButton,
 } from './styles';
 
-import Dog from '../../assets/dog.jpg';
-
 const EntityProfile = ({ imageEntity, name, initials, description, id }) => {
   const navigation = useNavigation();
 
   return (
     <Card>
-      <ImageContent>
-        <EntityImage source={imageEntity || Dog} />
-      </ImageContent>
+      {imageEntity ? (
+        <ImageContent>
+          <EntityImage source={{ uri: imageEntity }} />
+        </ImageContent>
+      ) : null}
       <Container>
         <Name>{name}</Name>
         <Initials>{initials}</Initials>
