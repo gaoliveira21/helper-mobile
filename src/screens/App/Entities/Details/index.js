@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useRoute, useNavigation } from '@react-navigation/native';
-import { TouchableOpacity, ScrollView, View, FlatList } from 'react-native';
+import {
+  TouchableOpacity,
+  ScrollView,
+  View,
+  FlatList,
+  Linking,
+} from 'react-native';
 
 import api from '../../../../services/api';
 import { formatDate } from '../../../../utils/format';
@@ -40,6 +46,10 @@ const Details = () => {
     loadEntity();
   }, [params]);
 
+  function handleWhatsapp() {
+    Linking.openURL(`whatsapp://send?phone=55${entity.profile?.whatsapp}`);
+  }
+
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <Container>
@@ -72,7 +82,9 @@ const Details = () => {
         <ContentBox>
           <Title>Whatsapp</Title>
           <DividerTitle />
-          <Description>{entity.profile?.whatsapp}</Description>
+          <TouchableOpacity onPress={handleWhatsapp}>
+            <Description>{entity.profile?.whatsapp}</Description>
+          </TouchableOpacity>
         </ContentBox>
 
         <ContentBox>
