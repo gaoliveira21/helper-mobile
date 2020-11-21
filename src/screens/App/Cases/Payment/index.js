@@ -46,7 +46,9 @@ const Payment = () => {
     try {
       formRef.current.setErrors({});
       const schema = Yup.object().shape({
-        value: Yup.number().positive().required(),
+        value: Yup.number()
+          .positive('O campo Valor precisa ser um número válido')
+          .required('O campo Valor é obrigatório'),
       });
       await schema.validate(data, { abortEarly: false });
 
