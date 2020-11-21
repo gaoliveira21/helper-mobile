@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Form } from '@unform/mobile';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { TouchableOpacity, ScrollView } from 'react-native';
@@ -16,8 +16,6 @@ import {
   TextContent,
   NameCard,
   NumberCard,
-  RegisterCreditCard,
-  AddCardButton,
   CheckAnonymous,
   Check,
   CheckText,
@@ -33,6 +31,16 @@ const Payment = () => {
   const { params } = useRoute();
   const formRef = useRef(null);
   const [isSelected, setSelection] = useState(false);
+  const [card, setCard] = useState(null);
+
+  useEffect(() => {
+    async function loadCard() {
+      const response = await api.get('/donators/cards');
+      setCard(response.data[0] || null);
+    }
+
+    loadCard();
+  }, []);
 
   async function handleSubmit(data) {
     try {
@@ -56,31 +64,20 @@ const Payment = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <Container>
-        <Title>Escolha o cartão</Title>
+        <Title>Cartão selecionado</Title>
         <DividerTitle />
 
-        <CreditCardBox>
-          <MaterialIcons name="credit-card" size={36} color="#5B5F97" />
-          <TextContent>
-            <NameCard>Nome do cartão</NameCard>
-            <NumberCard>Parte do número</NumberCard>
-          </TextContent>
-        </CreditCardBox>
-
-        <CreditCardBox>
-          <MaterialIcons name="credit-card" size={36} color="#5B5F97" />
-          <TextContent>
-            <NameCard>Nome do cartão</NameCard>
-            <NumberCard>Parte do número</NumberCard>
-          </TextContent>
-        </CreditCardBox>
-
-        <TouchableOpacity onPress={() => navigation.navigate('NewCreditCard')}>
-          <RegisterCreditCard>
-            <MaterialIcons name="add" size={24} color="#5B5F97" />
-            <AddCardButton>Adicionar cartão</AddCardButton>
-          </RegisterCreditCard>
-        </TouchableOpacity>
+        {card && (
+          <CreditCardBox>
+            <MaterialIcons name="credit-card" size={36} color="#5B5F97" />
+            <TextContent>
+              <NameCard>{card.nickname}</NameCard>
+              <NumberCard>
+                {card.number.replace(/\d{12}/g, '************')}
+              </NumberCard>
+            </TextContent>
+          </CreditCardBox>
+        )}
 
         <Title>Valor da doação</Title>
         <DividerTitle />
@@ -100,7 +97,9 @@ const Payment = () => {
 
         <CheckAnonymous>
           <Check value={isSelected} onValueChange={setSelection} />
-          <CheckText>Tornar essa doação anônima</CheckText>
+          <TouchableOpacity onPress={() => setSelection(!isSelected)}>
+            <CheckText>Tornar essa doação anônima</CheckText>
+          </TouchableOpacity>
         </CheckAnonymous>
 
         <ConfirmButton onPress={() => formRef.current.submitForm()}>

@@ -34,7 +34,7 @@ export const CreditCardBox = styled.View`
   background-color: #fff;
   border-radius: 8px;
 
-  margin-top: 24px;
+  margin: 24px 0;
 `;
 
 export const TextContent = styled.View`
