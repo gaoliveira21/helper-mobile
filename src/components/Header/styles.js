@@ -9,13 +9,15 @@ export const HeaderContent = styled.View`
   align-items: flex-start;
 `;
 
-export const SmallText = styled.Text`
-  font-size: 14px;
+export const LargeText = styled.Text`
+  font-size: 28px;
+  font-weight: 700;
   color: #fff;
 `;
 
-export const LargeText = styled.Text`
-  font-size: 24px;
-  font-weight: 700;
+export const SmallText = styled.Text`
+  font-size: 14px;
   color: #fff;
+
+  margin-top: 8px;
 `;

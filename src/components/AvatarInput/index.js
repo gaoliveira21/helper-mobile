@@ -15,7 +15,11 @@ const AvatarInput = ({ image }) => {
   return (
     <ImageContainer>
       <ImageContent>
-        <ProfileImage source={image || Mestre} />
+        {/*
+          Validar se tem imagem
+          <ProfileImage source={image || Mestre} />
+        */}
+        <MaterialIcons name="person" size={64} color="#fff" />
       </ImageContent>
       <EditButton>
         <MaterialIcons name="edit" color="#FFF" size={32} />
