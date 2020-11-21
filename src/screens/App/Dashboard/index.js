@@ -20,7 +20,7 @@ const Dashboard = () => {
   const auth = useAuth();
 
   const formattedDonationAmount = useMemo(
-    () => formatPrice(dashboard.donationAmount),
+    () => formatPrice(dashboard.donationAmount / 100),
     [dashboard]
   );
 
