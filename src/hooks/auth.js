@@ -77,6 +77,20 @@ const AuthProvider = ({ children }) => {
     }
   }
 
+  async function changeAvatar(data) {
+    try {
+      await api.put('/donators', { avatar_id: data.avatar.id });
+
+      await AsyncStorage.setItem(
+        '@helper:user',
+        JSON.stringify({ ...user, ...data })
+      );
+      setUser({ ...user, ...data });
+    } catch (error) {
+      Alert.alert('Falha na alteração do perfil!', 'verifique seus dados');
+    }
+  }
+
   async function changePassword(data) {
     try {
       await api.put('/donators', data);
@@ -103,6 +117,7 @@ const AuthProvider = ({ children }) => {
         finishSignUp,
         updateProfile,
         changePassword,
+        changeAvatar,
         signOut,
       }}
     >

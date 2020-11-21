@@ -5,7 +5,6 @@ import { MaterialIcons } from '@expo/vector-icons';
 import * as Yup from 'yup';
 
 import Input from '../../../../../components/Input';
-import Avatar from '../../../../../components/AvatarInput';
 
 import { Container, FormBlock, NextButton, NextButtonText } from './styles';
 import errors from '../../../../../utils/errors';
@@ -53,7 +52,6 @@ const Step2 = () => {
     <Container>
       <Form ref={formRef} onSubmit={handleSubmit}>
         <FormBlock>
-          <Avatar image="" />
           <Input
             label="Telefone"
             placeholder="(XX) XXXXX-XXXX"

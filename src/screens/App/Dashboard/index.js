@@ -1,6 +1,5 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { View } from 'react-native';
-import { useFocusEffect } from '@react-navigation/native';
 import { FontAwesome5, MaterialIcons } from '@expo/vector-icons';
 
 import api from '../../../services/api';
@@ -19,8 +18,6 @@ import {
   Value,
 } from './styles';
 
-import Mestre from '../../../assets/mestre.png';
-
 const Dashboard = () => {
   const [dashboard, setDashboard] = useState({});
   const auth = useAuth();
@@ -30,7 +27,7 @@ const Dashboard = () => {
     [dashboard]
   );
 
-  useFocusEffect(() => {
+  useEffect(() => {
     async function loadDashboard() {
       const response = await api.get('/donators/dashboard');
       setDashboard(response.data);
@@ -43,11 +40,11 @@ const Dashboard = () => {
     <>
       <Header>
         <ImageContent>
-          {/*
-            Validar se tiver imagem
-            {<ProfileImage source={Mestre} />}
-          */}
-          <MaterialIcons name="person" size={48} color="#fff" />
+          {auth.user.avatar ? (
+            <ProfileImage source={{ uri: auth.user.avatar.url }} />
+          ) : (
+            <MaterialIcons name="person" size={48} color="#fff" />
+          )}
         </ImageContent>
         <SmallText>Bem-vindo</SmallText>
         <MediumText>{auth.user.full_name}</MediumText>
