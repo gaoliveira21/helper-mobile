@@ -5,6 +5,7 @@ import { CheckBox } from 'react-native';
 export const Container = styled.View`
   padding: 48px 24px;
   flex: 1;
+  background-color: #f9f9f9;
 `;
 
 export const ContentBox = styled.View`
@@ -33,7 +34,7 @@ export const CreditCardBox = styled.View`
   background-color: #fff;
   border-radius: 8px;
 
-  margin-top: 24px;
+  margin: 24px 0;
 `;
 
 export const TextContent = styled.View`

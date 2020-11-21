@@ -65,14 +65,16 @@ const ChangePassword = () => {
                 <MaterialIcons name="person" size={24} color={color} />
               )}
               name="cpf"
+              maxLength={11}
             />
             <Input
               label="Data de validade"
-              placeholder="MM/YYYY"
+              placeholder="MM/YY"
               icon={({ color }) => (
                 <MaterialIcons name="date-range" size={24} color={color} />
               )}
               name="expiration_date"
+              maxLength={5}
             />
             <Input
               label="Número do cartão"
@@ -81,6 +83,7 @@ const ChangePassword = () => {
                 <MaterialIcons name="credit-card" size={24} color={color} />
               )}
               name="number"
+              maxLength={16}
             />
             <Input
               label="CVV"
@@ -89,6 +92,7 @@ const ChangePassword = () => {
                 <MaterialIcons name="credit-card" size={24} color={color} />
               )}
               name="cvv"
+              maxLength={3}
             />
 
             <Button

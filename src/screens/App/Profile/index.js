@@ -69,7 +69,7 @@ const Profile = () => {
           initialData={{ ...auth.user }}
         >
           <FormBlock>
-            <Avatar image="" />
+            <Avatar img={auth.user.avatar?.url} />
             <Input
               label="Nome completo"
               placeholder="Nome completo do usuário"
@@ -93,6 +93,7 @@ const Profile = () => {
                 <MaterialIcons name="phone" size={24} color={color} />
               )}
               name="phone"
+              maxLength={11}
             />
             <Input
               label="Cidade"
@@ -109,6 +110,8 @@ const Profile = () => {
                 <MaterialIcons name="my-location" size={24} color={color} />
               )}
               name="state"
+              maxLength={2}
+              autoCapitalize="characters"
             />
             <Button
               color="#6FCF97"

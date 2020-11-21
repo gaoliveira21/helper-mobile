@@ -18,14 +18,12 @@ import {
   Value,
 } from './styles';
 
-import Mestre from '../../../assets/mestre.png';
-
 const Dashboard = () => {
   const [dashboard, setDashboard] = useState({});
   const auth = useAuth();
 
   const formattedDonationAmount = useMemo(
-    () => formatPrice(dashboard.donationAmount),
+    () => formatPrice(dashboard.donationAmount / 100),
     [dashboard]
   );
 
@@ -42,11 +40,11 @@ const Dashboard = () => {
     <>
       <Header>
         <ImageContent>
-          {/*
-            Validar se tiver imagem
-            {<ProfileImage source={Mestre} />}
-          */}
-          <MaterialIcons name="person" size={48} color="#fff" />
+          {auth.user.avatar ? (
+            <ProfileImage source={{ uri: auth.user.avatar.url }} />
+          ) : (
+            <MaterialIcons name="person" size={48} color="#fff" />
+          )}
         </ImageContent>
         <SmallText>Bem-vindo</SmallText>
         <MediumText>{auth.user.full_name}</MediumText>

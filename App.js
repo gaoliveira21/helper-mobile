@@ -54,6 +54,7 @@ export default function App() {
       </Container>
     );
   }
+
   return (
     <AppProvider>
       <AuthProvider>

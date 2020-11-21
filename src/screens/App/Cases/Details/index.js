@@ -45,7 +45,9 @@ const Details = () => {
         </ContentBox>
 
         <ContentBox>
-          <DonateButton onPress={() => navigation.navigate('Payment')}>
+          <DonateButton
+            onPress={() => navigation.navigate('Payment', { id: caseData?.id })}
+          >
             <TextButton>DOAR</TextButton>
           </DonateButton>
           <FlatList
@@ -57,7 +59,7 @@ const Details = () => {
                 <ImageContent>
                   <CaseImage
                     source={{
-                      uri: item.url.replace('localhost', '192.168.20.103'),
+                      uri: item.url,
                     }}
                   />
                 </ImageContent>

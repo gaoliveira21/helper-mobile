@@ -39,7 +39,7 @@ const Entities = () => {
           keyExtractor={(entity) => String(entity.id)}
           renderItem={({ item }) => (
             <EntityProfile
-              imageEntity=""
+              imageEntity={item.avatar?.url || ''}
               name={item.entity.name}
               initials={item.initials}
               description={item.description}

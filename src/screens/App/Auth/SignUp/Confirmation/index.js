@@ -8,7 +8,6 @@ import * as Yup from 'yup';
 import { useAuth } from '../../../../../hooks/auth';
 
 import Input from '../../../../../components/Input';
-import Avatar from '../../../../../components/AvatarInput';
 
 import {
   Container,
@@ -68,7 +67,6 @@ const Confirmation = () => {
           initialData={{ ...route.params }}
         >
           <FormBlock>
-            <Avatar image="" />
             <Input
               label="Nome completo"
               placeholder="Insira seu nome completo"
