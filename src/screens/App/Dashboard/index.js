@@ -1,5 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { View } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 import api from '../../../services/api';
@@ -24,7 +25,7 @@ const Dashboard = () => {
     [dashboard]
   );
 
-  useEffect(() => {
+  useFocusEffect(() => {
     async function loadDashboard() {
       const response = await api.get('/donators/dashboard');
       setDashboard(response.data);

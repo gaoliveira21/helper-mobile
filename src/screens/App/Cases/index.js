@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
 import { FlatList } from 'react-native';
 import { Container } from './styles';
 
@@ -11,7 +12,7 @@ const Cases = () => {
   const [cases, setCases] = useState([]);
   const { user } = useAuth();
 
-  useEffect(() => {
+  useFocusEffect(() => {
     async function loadCases() {
       const response = await api.get('/cases', {
         params: {

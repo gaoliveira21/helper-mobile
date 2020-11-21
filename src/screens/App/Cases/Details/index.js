@@ -59,7 +59,7 @@ const Details = () => {
                 <ImageContent>
                   <CaseImage
                     source={{
-                      uri: item.url.replace('localhost', '192.168.20.106'),
+                      uri: item.url,
                     }}
                   />
                 </ImageContent>

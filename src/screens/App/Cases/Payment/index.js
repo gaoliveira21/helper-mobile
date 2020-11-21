@@ -75,7 +75,7 @@ const Payment = () => {
           </TextContent>
         </CreditCardBox>
 
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity onPress={() => navigation.navigate('NewCreditCard')}>
           <RegisterCreditCard>
             <MaterialIcons name="add" size={24} color="#5B5F97" />
             <AddCardButton>Adicionar cartão</AddCardButton>
