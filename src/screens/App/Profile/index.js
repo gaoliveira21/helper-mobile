@@ -69,7 +69,7 @@ const Profile = () => {
           initialData={{ ...auth.user }}
         >
           <FormBlock>
-            <Avatar image="" />
+            <Avatar img={auth.user.avatar?.url} />
             <Input
               label="Nome completo"
               placeholder="Nome completo do usuário"
