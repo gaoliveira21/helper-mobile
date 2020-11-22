@@ -34,13 +34,14 @@ const Cases = () => {
       />
       <Container>
         <FlatList
+          showsVerticalScrollIndicator={false}
           data={cases}
           keyExtractor={(c) => String(c.id)}
           renderItem={({ item }) => (
             <CaseItem
               key={item.id}
               id={item.id}
-              imageCase=""
+              imageCase={item.files}
               caseDate={item.createdAt}
               title={item.title}
               entity={item.owner.name}

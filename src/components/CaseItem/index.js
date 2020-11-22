@@ -34,9 +34,9 @@ const CaseItem = ({
 
   return (
     <Card>
-      {imageCase ? (
+      {imageCase.length > 0 ? (
         <ImageContent>
-          <CaseImage source={{ uri: imageCase }} />
+          <CaseImage source={{ uri: imageCase[0].url }} />
         </ImageContent>
       ) : null}
       <Container>
@@ -62,7 +62,8 @@ CaseItem.propTypes = {
   description: PropTypes.string.isRequired,
   caseValue: PropTypes.number.isRequired,
   caseValueCollected: PropTypes.number.isRequired,
-  imageCase: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  imageCase: PropTypes.array.isRequired,
 };
 
 export default CaseItem;
