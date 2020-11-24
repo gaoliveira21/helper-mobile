@@ -39,7 +39,7 @@ const ChangePassword = () => {
 
       await api.post('/donators/cards', data);
 
-      navigation.navigate('Success');
+      navigation.goBack();
     } catch (err) {
       errors(err, formRef);
     }

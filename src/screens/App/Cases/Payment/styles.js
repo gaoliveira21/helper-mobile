@@ -64,6 +64,7 @@ export const AddCardButton = styled.Text`
   color: #5b5f97;
   font-size: 16px;
   font-weight: bold;
+  padding: 15px 0;
 `;
 
 export const CheckAnonymous = styled.View`

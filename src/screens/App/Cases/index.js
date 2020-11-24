@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FlatList } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { Container } from './styles';
 
 import { useAuth } from '../../../hooks/auth';
@@ -10,6 +11,7 @@ import CaseItem from '../../../components/CaseItem';
 const Cases = () => {
   const [cases, setCases] = useState([]);
   const { user } = useAuth();
+  const navigation = useNavigation();
 
   useEffect(() => {
     async function loadCases() {
@@ -23,8 +25,10 @@ const Cases = () => {
       setCases(response.data.cases);
     }
 
-    loadCases();
-  }, [user]);
+    navigation.addListener('focus', () => {
+      loadCases();
+    });
+  }, [user, navigation]);
 
   return (
     <>

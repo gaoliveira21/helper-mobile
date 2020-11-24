@@ -21,6 +21,7 @@ import {
   CheckText,
   ConfirmButton,
   TextButton,
+  AddCardButton,
 } from './styles';
 
 import Input from '../../../../components/Input';
@@ -69,7 +70,7 @@ const Payment = () => {
         <Title>Cartão selecionado</Title>
         <DividerTitle />
 
-        {card && (
+        {card ? (
           <CreditCardBox>
             <MaterialIcons name="credit-card" size={36} color="#5B5F97" />
             <TextContent>
@@ -79,6 +80,12 @@ const Payment = () => {
               </NumberCard>
             </TextContent>
           </CreditCardBox>
+        ) : (
+          <TouchableOpacity
+            onPress={() => navigation.navigate('NewCreditCard')}
+          >
+            <AddCardButton>Adicionar cartão</AddCardButton>
+          </TouchableOpacity>
         )}
 
         <Title>Valor da doação</Title>
