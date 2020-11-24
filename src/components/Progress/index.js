@@ -3,7 +3,13 @@ import PropTypes from 'prop-types';
 
 import { formatPrice } from '../../utils/format';
 
-import { ProgressBar, CurrentProgress, Value, ValueCollected } from './styles';
+import {
+  ProgressBar,
+  CurrentProgress,
+  ValueOut,
+  Value,
+  ValueCollected,
+} from './styles';
 
 const Progress = ({ value, valueCollected }) => {
   const formattedValue = useMemo(() => formatPrice(value), [value]);
@@ -12,12 +18,15 @@ const Progress = ({ value, valueCollected }) => {
   ]);
 
   return (
-    <ProgressBar>
-      <Value>R$ {formattedValue}</Value>
-      <CurrentProgress>
-        <ValueCollected>R$ {formattedValueCollected}</ValueCollected>
-      </CurrentProgress>
-    </ProgressBar>
+    <>
+      <ValueOut>Valor total R$ {formattedValue}</ValueOut>
+      <ProgressBar>
+        <Value>R$ {formattedValue}</Value>
+        <CurrentProgress percent={Math.ceil((valueCollected / value) * 100)}>
+          <ValueCollected>R$ {formattedValueCollected}</ValueCollected>
+        </CurrentProgress>
+      </ProgressBar>
+    </>
   );
 };
 

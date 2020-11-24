@@ -51,6 +51,7 @@ const Details = () => {
             <TextButton>DOAR</TextButton>
           </DonateButton>
           <FlatList
+            showsHorizontalScrollIndicator={false}
             horizontal
             data={caseData.files}
             keyExtractor={(file) => String(file.id)}
