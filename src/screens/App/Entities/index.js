@@ -35,6 +35,7 @@ const Entities = () => {
       />
       <Container>
         <FlatList
+          showsVerticalScrollIndicator={false}
           data={entities}
           keyExtractor={(entity) => String(entity.id)}
           renderItem={({ item }) => (

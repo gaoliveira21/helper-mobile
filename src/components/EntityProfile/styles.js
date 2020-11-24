@@ -10,7 +10,7 @@ export const Card = styled.View`
 `;
 
 export const Container = styled.View`
-  padding: 24px;
+  padding: 18px;
 `;
 
 export const ImageContent = styled.View`
@@ -45,7 +45,7 @@ export const Initials = styled.Text`
 export const Description = styled.Text`
   color: #999999;
   line-height: 24px;
-  margin: 12px 0;
+  margin-top: 12px;
   text-align: justify;
 `;
 
