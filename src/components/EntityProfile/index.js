@@ -30,7 +30,7 @@ const EntityProfile = ({ imageEntity, name, initials, description, id }) => {
         <Description>{description}</Description>
       </Container>
       <ProfileButton onPress={() => navigation.navigate('Details', { id })}>
-        <TextButton>Ver Perfil</TextButton>
+        <TextButton>VER PERFIL</TextButton>
       </ProfileButton>
     </Card>
   );
