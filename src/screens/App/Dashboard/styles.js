@@ -61,11 +61,11 @@ export const MediumText = styled.Text`
 export const Total = styled.Text`
   font-size: 14px;
   font-weight: 700;
-  color: #ff6b6c;
+  color: #6fcf97;
 `;
 
 export const Value = styled.Text`
   font-size: 36px;
   font-weight: 700;
-  color: #ff6b6c;
+  color: #6fcf97;
 `;

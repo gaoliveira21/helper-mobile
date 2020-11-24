@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { TouchableOpacity, FlatList } from 'react-native';
+import { TouchableOpacity, FlatList, View } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 import api from '../../../../services/api';
@@ -35,21 +35,23 @@ const CreditCard = () => {
       <Title>Cartões cadastrados</Title>
       <DividerTitle />
 
-      <FlatList
-        data={cards}
-        keyExtractor={(card) => String(card.id)}
-        renderItem={({ item }) => (
-          <CreditCardBox>
-            <MaterialIcons name="credit-card" size={36} color="#5B5F97" />
-            <TextContent>
-              <NameCard>{item.nickname}</NameCard>
-              <NumberCard>
-                {item.number.replace(/\d{12}/g, '************')}
-              </NumberCard>
-            </TextContent>
-          </CreditCardBox>
-        )}
-      />
+      {cards.length > 0 && (
+        <FlatList
+          data={cards}
+          keyExtractor={(card) => String(card.id)}
+          renderItem={({ item }) => (
+            <CreditCardBox>
+              <MaterialIcons name="credit-card" size={36} color="#5B5F97" />
+              <TextContent>
+                <NameCard>{item.nickname}</NameCard>
+                <NumberCard>
+                  {item.number.replace(/\d{12}/g, '************')}
+                </NumberCard>
+              </TextContent>
+            </CreditCardBox>
+          )}
+        />
+      )}
 
       <TouchableOpacity onPress={() => navigation.navigate('NewCreditCard')}>
         <RegisterCreditCard>

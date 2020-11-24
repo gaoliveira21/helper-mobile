@@ -27,5 +27,5 @@ export const Field = styled.TextInput`
 export const Error = styled.Text`
   color: #ff6b6c;
   font-size: 14px;
-  height: 24px;
+  min-height: 24px;
 `;
