@@ -51,7 +51,7 @@ const Dashboard = () => {
       </Header>
       <Container>
         <TotalDonations>
-          <FontAwesome5 name="coins" size={64} color="#ff6b6c" />
+          <FontAwesome5 name="coins" size={64} color="#6fcf97" />
           <View>
             <Total>Total doado</Total>
             <Value>R$ {formattedDonationAmount}</Value>
