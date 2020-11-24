@@ -91,7 +91,7 @@ const Step1 = () => {
       <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
         <HaveAccountText>
           Já possui cadastro?
-          <ClickHere>Acessar o app</ClickHere>
+          <ClickHere> Acessar o app</ClickHere>
         </HaveAccountText>
       </TouchableOpacity>
     </Container>
