@@ -8,6 +8,8 @@ import {
   Linking,
 } from 'react-native';
 
+import { FontAwesome } from '@expo/vector-icons';
+
 import api from '../../../../services/api';
 import { formatDate } from '../../../../utils/format';
 
@@ -27,6 +29,8 @@ import {
   CaseTitle,
   CaseEntity,
   CaseDescription,
+  WhatsappBtn,
+  TextButton,
 } from './styles';
 
 import Progress from '../../../../components/Progress';
@@ -82,9 +86,10 @@ const Details = () => {
         <ContentBox>
           <Title>Whatsapp</Title>
           <DividerTitle />
-          <TouchableOpacity onPress={handleWhatsapp}>
-            <Description>{entity.profile?.whatsapp}</Description>
-          </TouchableOpacity>
+          <WhatsappBtn onPress={handleWhatsapp}>
+            <FontAwesome name="whatsapp" size={24} color="#FFF" />
+            <TextButton>{entity.profile?.whatsapp}</TextButton>
+          </WhatsappBtn>
         </ContentBox>
 
         <ContentBox>

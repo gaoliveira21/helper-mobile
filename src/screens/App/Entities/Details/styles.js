@@ -103,9 +103,15 @@ export const CaseDescription = styled.Text`
   margin: 12px 0;
 `;
 
-export const ConfirmButton = styled(RectButton)`
+export const WhatsappBtn = styled(RectButton)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
   width: 100%;
-  padding: 24px 0;
+  margin: 12px 0;
+  padding: 12px 0;
   background-color: #6fcf97;
 
   border-radius: 8px;
@@ -113,7 +119,18 @@ export const ConfirmButton = styled(RectButton)`
   align-items: center;
 `;
 
+// export const ConfirmButton = styled(RectButton)`
+//   width: 100%;
+//   padding: 24px 0;
+//   background-color: #6fcf97;
+
+//   border-radius: 8px;
+//   justify-content: center;
+//   align-items: center;
+// `;
+
 export const TextButton = styled.Text`
+  margin-left: 12px;
   color: #fff;
   font-weight: bold;
 `;
