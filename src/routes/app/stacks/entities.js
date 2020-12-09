@@ -53,7 +53,7 @@ const EntitiesRoutes = ({ navigation, route }) => {
         name="Details"
         component={Details}
         options={({ navigation }) => ({
-          title: 'Perfil da instituição',
+          title: 'Perfil da entidade',
           headerTitleAlign: 'center',
           headerLeft: () => (
             <TouchableOpacity onPress={() => navigation.navigate('Entity')}>

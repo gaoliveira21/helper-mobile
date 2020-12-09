@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useNavigation } from '@react-navigation/native';
+import { MaterialIcons } from '@expo/vector-icons';
 
 import {
   Card,
@@ -19,11 +20,13 @@ const EntityProfile = ({ imageEntity, name, initials, description, id }) => {
 
   return (
     <Card>
-      {imageEntity ? (
-        <ImageContent>
+      <ImageContent>
+        {imageEntity ? (
           <EntityImage source={{ uri: imageEntity }} />
-        </ImageContent>
-      ) : null}
+        ) : (
+          <MaterialIcons name="person" size={64} color="#fff" />
+        )}
+      </ImageContent>
       <Container>
         <Name>{name}</Name>
         <Initials>{initials}</Initials>

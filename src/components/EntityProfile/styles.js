@@ -21,6 +21,7 @@ export const ImageContent = styled.View`
   border-radius: 180px;
   overflow: hidden;
   position: relative;
+  background-color: #ff6b6c;
 
   margin: 24px auto 0;
 `;
