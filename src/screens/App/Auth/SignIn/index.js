@@ -78,9 +78,6 @@ const SignIn = () => {
           <ButtonText>Cadastrar-se</ButtonText>
         </SignUpButton>
       </Form>
-      <ForgotPasswordText>
-        Esqueceu sua senha? <ClickHere>Clique aqui</ClickHere>
-      </ForgotPasswordText>
     </Container>
   );
 };
