@@ -2,6 +2,7 @@
 <h3 align="center">
   Aplicação para doações online
 </h3>
+
 ---
 
 ## :iphone: Algumas telas do app
