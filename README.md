@@ -7,11 +7,11 @@
 ## :iphone: Algumas telas do app
 
 <p>
-  <img src="./.github/loading.png" width="250" height="400"> <img src="./.github/welcome-01.png" width="250" height="400">
+  <img src="./.github/loading.png" width="250" height="400"> <img src="./.github/login.png" width="250" height="400"> <img src="./.github/success.png" width="250" height="400">
 </p>
 
 <p>
-  <img src="./.github/welcome-02.png" width="250" height="400"> <img src="./.github/welcome-03.png" width="250" height="400">
+  <img src="./.github/welcome-01.png" width="250" height="400"> <img src="./.github/welcome-02.png" width="250" height="400"> <img src="./.github/welcome-03.png" width="250" height="400">
 </p>
 
 ## :construction_worker: Pré-requisitos
